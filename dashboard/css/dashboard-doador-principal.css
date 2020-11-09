@@ -1,0 +1,380 @@
+/* fonte */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Gerais*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+p, li {
+    color: #fff;
+    font-size: 14px;
+    list-style: none;
+}
+/* header - cabeçalho */
+
+#cabecalho-area {
+    background-color: #FFFEFE;
+    border-top: 1px solid #EE0909;
+    border-bottom: 3px solid #EE0909;
+    border-right: 2px solid #EE0909;
+   
+    height: 70px;
+}
+
+#msg-doador {
+    color: #ee0909;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline;
+    
+    position: relative;
+    top: 20px;
+    left: 70px;
+    
+}
+
+#input-busca {
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 4px 4px 3px #EE0909;
+    display: inline;
+    position: relative;
+    left: 850px;
+    bottom: 17px;
+}
+
+/* barra de navegação lateral */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #EE0909;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: .6s;
+}
+
+/* links da barra de navegação lateral */
+.sidenav a {
+    padding: 8px 8px 8px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFF;
+    display: block;
+    transition: .3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+/* Posicionamento e estilização do botão fechar (canto superior direito) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* elemento que abre o menu lateral */
+span {
+    font-size: 30px;
+    cursor: pointer;
+    color: #EE0909;
+    position: relative;
+    bottom: 60px;
+    left: 30px;
+}
+
+
+/* foto do doador */
+.card {
+    background-color: #EE0909;
+    border: none;
+}
+
+.img-doador {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    left: 30px;
+}
+
+.tipo-sangue {
+    width: 50px;
+    height: 60px;
+    position: relative;
+    bottom: 50px;
+    left: 100px;
+}
+
+.nome-doador {
+    position: relative;
+    font-size: 20px;
+    bottom: 40px;
+    left: 15px;
+
+}
+
+
+
+/* área onde aparecerá o conteúdo dos links */
+.principal {
+    margin-left: 100px;
+    width: 80%;
+    background-color: #fff;
+    transition: margin 1s;
+}
+
+
+/* responsividade */
+@media(max-width: 768px) {
+    span {
+        font-size: 25px;
+        bottom: 55px;
+    }
+
+    .sidenav .closebtn {
+        font-size: 33px;
+        right: 0px;
+    }
+
+    #msg-doador {
+        font-size: 18px;
+        left: 160px;
+    }
+
+    #input-busca {
+        left: 520px;
+        bottom: 13px;
+        width: 150px;
+        height: 35px;
+    }
+
+    .img-doador {
+        width: 100px;
+        height: 100px;
+        left: 40px;
+    }
+
+    .tipo-sangue {
+        width: 40px;
+        height: 50px;
+        bottom: 45px;
+        left: 96px;
+    }
+
+    .nome-doador {
+        font-size: 18px;
+    }
+
+    .sidenav a {
+        font-size: 16px;
+        padding: 8px 8px 8px 10px;
+    }
+
+    
+    #btn-sair a {
+        padding-top: 10px;
+        
+    }
+
+    .cardbodyyou {
+        width: 540px;
+        flex-wrap: wrap;
+        justify-content: end;
+        height: auto;
+    }
+
+    .cardtopyou div:nth-child(2) {
+        font-size: 1.6rem;
+       
+    }
+
+    .cardtopyou div:nth-child(3) {
+        min-width: 485px;
+    }
+
+    .textboxGG {
+        width: 500px;
+    }
+
+    .cardbodyaddres {
+        width: 540px;
+    }
+
+    .btnenviar {
+        width: 75px;
+        height: 90px;
+    }
+
+    .divsection {
+        width: 500px;
+        position: relative;
+        left: 15px;
+    }
+
+    .div-cidade {
+        padding-bottom: 20px;
+    }
+
+
+}
+
+
+@media(max-width: 450px) {
+
+    #cabecalho-area {
+        height: 80px;
+    }
+
+    span {
+        font-size: 20px;
+        bottom: 55px;
+    }
+
+    .sidenav .closebtn {
+        font-size: 30px;
+    }
+
+    #msg-doador {
+        font-size: 14px;
+        left: 150px;
+        top: 6px;
+    }
+
+    #input-busca {
+        left: 220px;
+        top: 12px;
+        width: 130px;
+        height: 30px;
+    }
+
+    .img-doador {
+        width: 80px;
+        height: 80px;
+        left: 30px;
+    }
+
+    .tipo-sangue {
+        width: 30px;
+        height: 40px;
+        bottom: 38px;
+        left: 75px;
+    }
+
+    .nome-doador {
+        font-size: 14px;
+        bottom: 20px;
+        left: 5px;
+    }
+
+    .sidenav a {
+        font-size: 12px;
+        padding: 8px 8px 8px 8px;
+    }
+    
+    #btn-sair {
+        
+        width: 90px;
+        height: 40px;        
+    }
+
+    #btn-sair a {
+        padding-top: 7px;
+       
+    }
+    
+    .silhuette {
+        justify-content: start;
+    }
+    
+    .principal {
+        margin-left: 20px;
+    }
+
+    img.cadphoto {
+        width: 100px;
+        height: 100px;
+    }
+
+    label.photo {
+        margin-left: 25px;
+    }
+
+    .cardtopyou div:nth-child(2) {
+        font-size: 1.4rem;
+    }
+
+    .cardbodyyou {
+        width: 300px;
+        justify-content: start;
+    }
+
+    .cardbodyaddres {
+        width: 400px;
+    }
+
+    .textboxGG {
+        width: 270px;
+    }
+
+    .enviar {
+        margin-top: 30%;
+    }
+
+    .btnenviar {
+        width: 65px;
+        height: 80px;
+    }
+
+    .textboxG {
+        width: 260px;
+    }
+
+    .sexo {
+        padding-bottom: 20px;
+    }
+
+    .cardbodyaddres {
+        width: 300px;
+    }
+
+    .textboxM {
+        width: 120px;
+    }
+
+    .divsection {
+        width: 275px;
+    }
+
+}
+
+
+
+/* barra de navegação lateral */
+@media(max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

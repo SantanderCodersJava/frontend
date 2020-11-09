@@ -1,0 +1,11 @@
+label{
+    color: #EE0909;
+    text
+
+}
+
+.form-control{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 3px 3px 2px #FF0404;
+}

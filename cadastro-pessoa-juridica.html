@@ -1,0 +1,426 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="./img/icons/nurseico.jpeg">
+
+  <title>DooAmor</title>
+
+  <!-- Principal CSS do Bootstrap -->
+  <link href="./bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos customizados para esse template -->
+  <link href="./css/carousel.css" rel="stylesheet">
+  <link href="./css/styleboot.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <div><a class="navbar-brand" href="#"><img class="brand" src="./img/logo.png"></a></div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./home.html">Home <span class="sr-only">(atual)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropbtn">Cadastrar-se</a>
+            <div class="dropdown-content">
+              <a class="nav-link" href="./cadastro-pessoa-fisica.html">Pessoa Física</a>
+              <a class="nav-link" href="./cadastro-pessoa-juridica.html">Pessoa Jurídica</a>
+              <a class="nav-link" href="./cadastro-banco.html">Banco de Sangue</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./requisitos-doacao.html">Como Doar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./filtragem-banco-de-sangue.html">Onde Doar</a>
+          </li>
+          
+         
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <a class="nav-link" href="login.html"><img class="menu-ico" src="img/pessoa.png"> Login</a>
+        </form>
+
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+
+
+    <form method="POST" action="" enctype="multipart/form-data">
+
+
+      <div class="container silhuette">
+        <div class="row">
+          <img id="logo" class="cadphoto" src="img/silhuetalogo.png">
+          <input id="imagem" type="file" name="imagem" onchange="previewImagem()" accept="image/*">
+          <label for="imagem" class="photo" name="imagem"><img src="./img/btngotalogo.png"></label>
+        </div>
+      </div>
+
+      <section class="container you">
+        <div class="row cardtopyou">
+          <div><img class="topico" src="./img/icons/handico.jpeg"></div>
+          <div>
+            Sua Empresa
+          </div>
+          <div>
+
+          </div>
+        </div>
+        <hr class="divsection">
+
+
+        <section class="cardbodyyoupj">
+          <div class="bodyleft">
+            <div class="row">
+              <div class="col">Empresa - Razão Social</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxGG" type="text" name="nome" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">CNPJ</div>
+            </div>
+              <div class="row">
+              <div class="col"><input class="textboxG" type="text" name="cnpj" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">email - empresa</div>
+            </div>
+              <div class="row">
+              <div class="col"><input class="textboxG" type="email" name="emailEmpresa" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Telefone</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="tel" name="telefone" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Contato - Nome</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="text" name="contato" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Quantidade de Colaboradores</div>
+            </div>
+          
+          </div>
+
+          <div class="bodyright">
+            <div class="row">
+              <div class="col">&nbsp;</div>
+            </div>
+            <div class="row">
+              <div class="col">&nbsp;</div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">I.E</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="text" name="rg" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Data de Fundação</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="date" name="dataFundacao"></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Telefone 2</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="tel" name="telefone2" placeholder=""></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Contato - email</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="email" name="emailContato" placeholder=""></div>
+            </div>
+           
+           
+          </div>
+
+          
+        </section>
+        <div class="container" >
+          <div class="colaboradores">
+            <img src="./img/nao-sei.png" class="naosei">
+            <input class="rbGender" type="radio" name="porte" value="0a50" placeholder="">
+             <label class="" type="text" name="0a50">0 a 50</label>
+             &nbsp; &nbsp;
+             <input class="rbGender" type="radio" name="porte" value="51a100" placeholder="">
+             <label class="" type="text" name="51a200">51 a 200</label>
+             &nbsp; &nbsp;
+             <input class="rbGender" type="radio" name="porte" value="51a100" placeholder="">
+             <label class="" type="text" name="201a500">201 a 500</label>
+             &nbsp; &nbsp;
+           <input class="rbGender" type="radio" name="porte" value="501a1000" placeholder="">
+            <label class="" type="text" name="501a1000">501 a 1000</label>
+            &nbsp; &nbsp;
+            <input class="rbGender" type="radio" name="porte" value="acimade1000" placeholder="">
+            <label class="" type="text" name="acimade1000">acima de 1000</label>
+            </div>
+        </div>
+      </section>
+
+      <!-- <section class="container addres">
+        <div class="row cardtopyou">
+          <div><img class="topico" src="./img/icons/addresico.jpeg"></div>
+          <div>
+            Endereço
+          </div>
+        </div>
+        <hr class="divsection">
+        <section class="cardbodyaddres">
+          <div class="addresleft">
+            <div class="row">
+              <div class="col">CEP</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxM" type="text" name="cep" placeholder="00000-000"></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Empresa - Endereço principal</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxGG" type="text" name="endereco"
+                  placeholder="Logradouro.(Rua,Av etc)"></div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">Numero</div>
+              <div div class="col">Complemento</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxM" type="text" name="numero" placeholder="nº 1000"></div>
+              <div class="col"><input class="textboxM" type="text" name="complemento" placeholder="ap/conj/etc"></div>
+               </div>
+               <br />
+            <div class="row">
+              <div class="col">Bairro</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxGG" type="text" name="bairro" placeholder="Bairro"></div>
+             </div>
+            <br />
+            <div class="row">
+              <div class="col">Cidade</div>
+              <div class="col"><label for="cars">Estado</label></div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" type="text" name="cidade" placeholder="Cidade"></div>
+              <div class="col"><select id="estados" name="estados" class="optionboxG">
+                <option value=""></option>
+                <option value="ES">ES</option>
+                <option value="MG">MG</option>
+                <option value="RJ">RJ</option>
+                <option value="SP">SP</option>
+              </select></div>
+              
+
+            </div>
+            <br />
+          </div>
+
+       
+        </section>
+      </section>
+ -->
+
+ <section class="container addres">
+  <div class="row cardtopyou">
+    <div><img class="topico" src="./img/icons/addresico.jpeg"></div>
+    <div>
+      Endereço
+    </div>
+  </div>
+  <hr class="divsection">
+  <section class="cardbodyaddres">
+    <div class="addresleft">
+      <div class="row">
+        <div class="col">CEP</div>
+        <div class="col"><img class="dropsearchbtn" src="./img/buscarbtn.png"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input class="textboxM" name="cep" type="text" id="cep" value="" size="10" maxlength="9" />
+         </div>
+       </div>
+      <br />
+      <div class="row">
+        <div class="col">Empresa - Endereço Principal</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input class="textboxGG" name="rua" type="text" id="rua" size="60" />
+        </div>
+       </div>
+      <br />
+      <div class="row">
+        <div class="col">Numero</div>
+        <div div class="col">Complemento</div>
+      </div>
+      <div class="row">
+        <div class="col"><input class="textboxM" type="text" id="numero" name="numero"></div>
+        <div class="col"><input class="textboxM" type="text" name="complemento"></div>
+         </div>
+         <br />
+      <div class="row">
+        <div class="col">Bairro</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input class="textboxGG" name="bairro" type="text" id="bairro" size="40" />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">Cidade</div>
+        <div class="col">Estado</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input class="textboxG" name="cidade" type="text" id="cidade" size="40" />
+         </div>
+        <div class="col"><select id="uf" name="estado" class="optionboxG">
+         <option value=""></option>
+          <option value="ES">ES</option>
+          <option value="MG">MG</option>
+          <option value="RJ">RJ</option>
+          <option value="SP">SP</option>
+        </select></div>
+      </div>
+      <br />
+    </div>
+  </section>
+</section>
+
+      <section class="container comunica">
+        <div class="row cardtopyou">
+          <div><img class="topico2" src="./img/icons/comunic.png"></div>
+          <div>
+            Comunicação
+          </div>
+        </div>
+        <hr class="divsection">
+        <section class="cardbodycomunica">
+          <div class="cbavisos">
+            <div class="row">
+              <input type="checkbox" class="chbcomunic" name="newsletter"><span>Aceita receber nossa Newsletter</span>
+            </div>
+            <div class="row">
+             <input type="checkbox" class="chbcomunic" name="campanha"><span>Gostaria de participar de nossas campanhas de doação</span>
+           </div>
+           <div class="row">
+             <input type="checkbox" class="chbcomunic" name="politica"><span>Você concorda com nossa política e termos de privacidade</span>
+           </div>
+          </div>
+        
+         
+        </section>
+     
+        <section class="container enviar">
+          <button class="btnenviar" type="submit" name="enviar"><img class="btnenviar" src="./img/enviarbtn.png"></button>
+        </section>
+
+      </section>
+     
+    </form>
+<!--    
+
+  <footer>
+    <div class="fsections">
+      <div class="col fsec1">
+        <div>
+          <h5>fale conosco</h5>
+        </div>
+        <div class="">
+          <p><a href="https://github.com/daniela-reis" target="_blank"><img class="git"
+                src="./img/gitRodape.png"></a><a href="mailto:danielareis.ufabc@gmail.com">
+              danielareis.ufabc@gmail.com</a></p>
+          <p><a href="https://github.com/rodriguespaula1003" target="_blank"><img class="git"
+                src="./img/gitRodape.png"></a><a href="mailto:rodrigues.paula.1003@gmail.com">
+              rodrigues.paula.1003@gmail.com</a></p>
+          <p><a href="https://github.com/DavidChavess" target="_blank"><img class="git"
+                src="./img/gitRodape.png"></a><a href="mailto:davi.ch.fe@gmail.com"> davi.ch.fe@gmail.com</a></p>
+          <p><a hferf="#" target="_blank"><img class="git" src="./img/gitRodape.png"></a><a
+              href="mailto:erikalmlima@gmail.com"> erikalmlima@gmail.com</a></p>
+          <p><a href="https://github.com/alessandrop76" target="_blank"><img class="git"
+                src="./img/gitRodape.png"></a><a href="mailto:alessandropereira6000@gmail.com">
+              alessandropereira6000@gmail.com</a></p>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="col fsec2">
+        <div class="row sec1">
+          <div><a href="https://www.becas-santander.com/pt/program/santandercodersjava2020" target="_blank">
+            <h5>Projeto Integrador Santander Coders Java 2020</h5>
+          </a></div>
+        </div>
+        <div class="row sec2">
+          <div><a href="https://www.digitalhouse.com/br/curso/desenvolvimento-web-full-stack" target="_blank">
+            <h6>Digital House></h6>
+          </a></div>
+        </div>
+        <div class="row sec3">
+          <div><a class="backtop" href="#">Voltar ao topo</a></div>
+       </div>
+     </div>
+
+      <div class="col fsec3">
+        <div class="row">
+          <a class="fsociamedia" href="#"><img class="fsociamedia" src="./img/whats.png" target="_blank"></a>
+          <a class="fsociamedia" href="#"><img class="fsociamedia" src="./img/facebook1.png" target="_blank"></a>
+          <a class="fsociamedia" href="#"><img class="fsociamedia" src="./img/gplus.png" target="_blank"></a>
+          <a class="fsociamedia" href="#"><img class="fsociamedia" src="./img/github.png" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+</div>
+  </footer> -->
+
+
+ 
+  </main>
+  <!-- Foi colocado no final para a página carregar mais rápido -->
+  <script src="./bootstrap-4.1.3-dist/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="./bootstrap-4.1.3-dist/jquery-3.3.1.slim.min.js"><\/script>')</script>
+  <script src="./bootstrap-4.1.3-dist/popper.min.js"></script>
+  <script src="./bootstrap-4.1.3-dist/css/bootstrap.min.css"></script>
+  <script src="./bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</body>
+
+</html>

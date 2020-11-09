@@ -1,0 +1,32 @@
+.principal{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 40px;
+    justify-items: center;
+
+}
+.chart-container{
+    position: relative; 
+
+    height:80vh; 
+    width:40vw;
+    
+    padding: 20px;
+}
+#titulo_grafico{
+    background-color: red;
+
+    width: 400px;
+    height:35px;
+    border-radius: 20px;
+    padding: 5px;
+
+    margin-bottom: 25px;
+}
+.título{
+    color: white;
+    font-size: 1em;
+
+    text-align: center;
+}

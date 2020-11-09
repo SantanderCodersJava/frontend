@@ -1,0 +1,60 @@
+.principal_geral{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.titulo{
+    background-color: #EE0909;
+
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+
+    color:white;
+    text-align: center;
+}
+.principal_geral{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+    margin-left: 400px;
+    height: 150px;
+    width: 500px;
+}
+.estoque{
+    margin-top: 20px;
+    margin-left:200px;
+
+}
+.estoque1, .estoque2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 150px;
+    width: 600px;
+}
+.valores{
+    color:grey;
+    font-size: 20px;
+    text-align: end;
+}
+img{
+    height: 100px;
+}
+.nivel{
+    background-color: #EE0909;
+
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+
+    color:white;
+    text-align: center;
+}

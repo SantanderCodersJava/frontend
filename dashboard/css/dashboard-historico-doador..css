@@ -1,0 +1,402 @@
+/* fonte */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Gerais*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+p, li {
+    color: #fff;
+    font-size: 14px;
+    list-style: none;
+}
+/* header - cabeçalho */
+
+#cabecalho-area {
+    background-color: #FFFEFE;
+    border-top: 1px solid #EE0909;
+    border-bottom: 3px solid #EE0909;
+    border-right: 2px solid #EE0909;
+    width: 100%;
+    height: 70px;
+}
+
+.cab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#msg-doador {
+    color: #ee0909;
+    font-weight: bold;
+    font-size: 20px;    
+    margin-left: 250px;
+}
+
+#input-busca {
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 4px 4px 3px #EE0909;
+    margin-right: 20px;
+}
+
+/* barra de navegação lateral */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #EE0909;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: .5s;
+}
+
+/* links da barra de navegação lateral */
+.sidenav a {
+    padding: 8px 8px 8px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFF;
+    display: block;
+    transition: .3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+/* Posicionamento e estilização do botão fechar (canto superior direito) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* elemento que abre o menu lateral */
+span {
+    font-size: 30px;
+    cursor: pointer;
+    color: #EE0909;
+    position: relative;
+    bottom: 60px;
+    left: 30px;
+}
+
+
+/* foto do doador */
+.card {
+    background-color: #EE0909;
+    border: none;
+}
+
+.img-doador {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    left: 30px;
+}
+
+.tipo-sangue {
+    width: 50px;
+    height: 60px;
+    position: relative;
+    bottom: 50px;
+    left: 100px;
+}
+
+.nome-doador {
+    position: relative;
+    font-size: 20px;
+    bottom: 40px;
+    left: 15px;
+
+}
+#btn-sair {
+    background-color: #ee0909;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    transition: .5s;
+    position: relative;
+    left: 50px;
+    margin-top: 50px;
+}
+
+#btn-sair a {
+    padding-top: 8px;
+    padding-left: 30px;
+}
+
+
+#btn-sair:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: #F45858;
+}
+
+/* david */ 
+
+.center{
+    text-align: center;
+}
+
+
+.principal{
+    width: 90%;
+    margin: auto;
+    transition: padding .5s;
+}
+
+.botao-whatsapp{
+    border: none;
+    outline: 0px;
+    color: #FFF;
+    background-color: #FFFF;
+}
+
+button:focus{
+    outline: 0;
+}
+.section-1 div {
+    margin: 10px;
+}
+.section-1 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section-1, .section-2, .section-3{
+    width: 100%;
+    padding: 10px;
+    margin: 50px 0px;
+}
+
+
+.texto-direita{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.texto-esquerda{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.texto-quadro{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    background: #EE0909;
+    color: #FFF;
+    border-radius: 30px;
+}
+.tabela{
+    width: 100%;
+    font-size: 16pt;
+}
+
+.tabela tbody tr td{
+    padding: 15px;
+}
+
+.tabela thead tr th{
+    color: #EE0909;
+    margin:  10px;
+    padding: 10px;
+
+}
+
+.botao-agendar{
+    background-color: #EE0909;
+    border-radius: 30px;
+    color: #FFF;
+    padding: 5px;
+    border: none;
+}
+
+.espaco-linhas tr{
+    margin-top: 10px;
+}
+.botao-agendar a{
+    padding: 30px;
+    color: #FFF;
+}
+.botao-agendar a:hover{
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* responsividade */
+@media (min-width: 768px) and (max-width : 1200px) {
+    #msg-doador {    
+        margin-left: 170px;
+    }
+
+    .tabela{
+        font-size: 14pt;
+    }
+    
+    span {
+        font-size: 25px;
+        bottom: 55px;
+    }
+
+    .sidenav .closebtn {
+        font-size: 33px;
+        right: 0px;
+    }
+
+    #msg-doador {
+        font-size: 18px;
+        left: 160px;
+    }
+
+    #input-busca {
+        left: 520px;
+        bottom: 15px;
+        width: 150px;
+        height: 35px;
+    }
+
+    .img-doador {
+        width: 100px;
+        height: 100px;
+        left: 40px;
+    }
+
+    .tipo-sangue {
+        width: 40px;
+        height: 50px;
+        bottom: 45px;
+        left: 96px;
+    }
+
+    .nome-doador {
+        font-size: 18px;
+    }
+
+    .sidenav a {
+        font-size: 16px;
+        padding: 8px 8px 8px 10px;
+    }
+
+    
+    #btn-sair a {
+        padding-top: 10px;
+        padding-left: 28px;
+    }
+   
+    
+}
+
+
+@media(max-width: 460px) {
+    #msg-doador {    
+        margin-left: 100px;
+    }
+    
+    .principal{
+        margin: 0;
+        width: 100%;
+     }
+   
+   
+    .tabela{
+        font-size: 8pt;
+    }
+    .texto-quadro{
+        font-size: 10pt;
+    }
+
+    #cabecalho-area {
+        height: 80px;
+    }
+
+    span {
+        font-size: 20px;
+        bottom: 50px;
+    }
+
+    .sidenav .closebtn {
+        font-size: 30px;
+    }
+
+    #msg-doador {
+        font-size: 14px;
+        left: 150px;
+        top: 10px;
+    }
+
+    #input-busca {
+        left: 260px;
+        top: 15px;
+        width: 130px;
+        height: 30px;
+    }
+
+    .img-doador {
+        width: 80px;
+        height: 80px;
+        left: 30px;
+    }
+
+    .tipo-sangue {
+        width: 30px;
+        height: 40px;
+        bottom: 38px;
+        left: 75px;
+    }
+
+    .nome-doador {
+        font-size: 14px;
+        bottom: 20px;
+    }
+
+    .sidenav a {
+        font-size: 12px;
+        padding: 8px 8px 8px 8px;
+    }
+    
+    #btn-sair {
+        
+        width: 90px;
+        height: 40px;        
+    }
+
+    #btn-sair a {
+        padding-top: 7px;
+        padding-left: 30px;
+    }
+
+}
+
+/* barra de navegação lateral */
+@media(max-height: 450px) {
+
+
+     .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

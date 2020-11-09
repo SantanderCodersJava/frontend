@@ -1,0 +1,125 @@
+body{
+    font-family: sans-serif;
+}
+.navbar{
+    font-size: 15px;
+    height: 70px;
+}
+.nav-link{
+    color:#EE0909;
+    font-weight: bolder;
+}
+.nav-link:hover {
+    color:  white;
+    background-color: #EE0909;
+    border-radius: 20px;
+    height: 40px;
+    transition:all .9s;
+}
+.sejaumdoador{
+    height: 70%;
+    margin-top: 50px;
+    margin-left: 350px;
+}
+section{
+    margin-top: 0px;
+    background-color: white;
+    height: 50vh;
+}
+#prerequesitos{
+    display: flex;
+    flex-direction: row;
+    background-color: #ee0909cc;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+h1, h2, h3, h4, h5, h6{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: white;
+
+}
+h3{
+    color:#EE0909;
+    text-align: left;
+}
+
+p{
+    font-size: 20px;
+    color:white;
+    font-weight: lighter;
+}
+#accordion_section{
+    margin-top: 20px;
+    margin-left: 400px;
+    max-height: unset;
+}
+.accordion_btn {
+    background-color:#EE0909;
+    padding: 15px;
+    width: 50%;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+
+    color: white;
+    font-weight: bold;
+    text-align: left;
+
+    font-size: 15px;
+    transition: 0.4s;
+  }
+.accordion_btn:after {
+    content: '\002B';
+    color:white;
+    font-weight: bolder;
+    float: right;
+    margin-left: 5px;
+}
+.active:after {
+    content: "\2212";
+}
+.panel{
+    text-align: justify;
+    line-height: 1rem;
+
+    box-sizing: border-box;
+
+    padding: 0px 10px;
+    width: 50%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.information{
+    margin-top: 20px;
+    font-size: 15px;
+    color: rgb(85, 84, 84);
+    text
+}
+#requisito{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height: 300px;
+}
+img{
+    height: 250px;
+    margin: auto;
+}
+.tempomulher,.tempohomem{
+    display: flex;
+    flex-direction:column;
+}
+#tempo{
+    display: flex;
+    flex-direction: row;
+    background-color: #EE0909;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}

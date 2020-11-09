@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!--Fonte-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/login.css'>
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/276963ac8a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-around align-items-center">
+            <div class="col-md-5 donator">
+                <h2 class="title">Doador</h2>
+                <form id="formDonator" action="./dashboard-doador/dashboard-doador-principal.html" method="POST">
+                    <div class="form-group text-center">
+                        <label class="label" for="email_doador">Email:</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="email_doador" type="email"
+                                placeholder="joao_silva@gmail.com" name="email_doador" value="" required />
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                            </div>
+                        </div>
+
+
+                        <label class="label" for="senha_doador">Senha:</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="senha_doador" type="password" name="senha_doador" value=""
+                                required />
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user-lock"></i></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex flex-row justify-content-around">
+                        <div>
+                            <h3 class="subtitle"><a href="#" data-toggle="modal" data-target="#EsqueciDoador">Esqueceu a
+                                    senha?</a></h3>
+
+                            <h3 class="subtitle"><a href="./pfcad.html">Ainda não tem conta?</a></h3>
+                        </div>
+                        <button class="btn_enviar" type="submit" name="enviar"><img class="btnenviar"
+                                src="./img/enviarbtn.png"></button>
+                    </div>
+
+                </form>
+                <!--formDonator-->
+
+                <!-- Modal -->
+                <div class="modal fade" id="EsqueciDoador" tabindex="-1" role="dialog"
+                    aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="TituloModalCentralizado">Recuperar Senha</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="cpf_rec" class="col-form-label">CPF:</label>
+                                        <input type="text" class="form-control" id="cpf_rec">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email_rec" class="col-form-label">Email cadastrado:</label>
+                                        <input type="email" class="form-control" id="email_rec" value="" required>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" type="submit" value="Submit">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Modal Donator-->
+
+
+            </div>
+            <!--donator-->
+
+            <div class="col-md-5 blooddonorcenter">
+                <h2 class="title">Banco de Sangue</h2>
+                <form id="formBloodDonorCenter" action="" method="POST">
+                    <div class="form-group text-center">
+                        <label class="label" for="email_banco">Email:</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="email_banco" type="email"
+                                placeholder="cadastro@bancodesangue.com" name="email_banco" value="" required />
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                            </div>
+                        </div>
+
+
+                        <label class="label" for="senha_banco">Senha:</label>
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="senha_banco" type="password" name="senha_banco" value=""
+                                required />
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user-lock"></i></span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="d-flex flex-row justify-content-around">
+                        <div>
+                            <h3 class="subtitle"><a href="#" data-toggle="modal" data-target="#EsqueciBanco">Esqueceu a senha?</a></h3>
+                            <h3 class="subtitle"><a href="./cadastro_banco.html">Ainda não tem conta?</a></h3>
+                        </div>
+                        <button class="btn_enviar" type="submit" name="enviar"><img class="btnenviar"
+                                src="./img/enviarbtn.png"></button>
+                    </div>
+                </form>
+                <!--formBloodDonorCenter-->
+
+                <!-- Modal -->
+                <div class="modal fade" id="EsqueciBanco" tabindex="-1" role="dialog"
+                    aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="TituloModalCentralizado">Recuperar Senha</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="cnpj_rec" class="col-form-label">CNPJ:</label>
+                                        <input type="text" class="form-control" id="cnpj_rec">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email_rec" class="col-form-label">Email cadastrado:</label>
+                                        <input type="email" class="form-control" id="email_rec" value="" required>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" type="submit" value="Submit">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Modal BloodDonorCenter-->
+
+            </div>
+            <!--blooddonorcenter-->
+        </div>
+        <!--row-->
+    </div>
+    <!--container-->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

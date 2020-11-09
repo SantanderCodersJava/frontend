@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de sangue</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dashboard-historico-doador..css">
+    <link rel="stylesheet" href="css/dashboard-banco-principal.css">
+    
+    <!-- Scripts-->
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="cabecalho-area"  class="cab">
+        <div>
+            <p id="msg-doador">Olá, nome do banco de sangue</p>
+        </div>
+        <form class="form-busca" action="">
+            <input type="text" id="input-busca" class="form-control" name="busca" placeholder="busca"> 
+        </form>
+      
+    </header>  
+    <main class="main">    
+       
+        <aside>
+            <!-- Barra de navegação lateral -->
+            <div id="mySidenav"class="sidenav">
+                <a href="#" class="closebtn">&times;</a>    
+                
+                <!-- foto doador -->
+                <div class="card">
+                    <img class="card-img-top img-banco" src="img/foto-doador.png" alt="foto doador">
+                    
+                    <p class="card-text nome-banco">Nome do banco de sangue</p>                        
+                                           
+                    
+                </div>               
+
+                <!-- links da barra de navegação lateral -->
+                <a href="./dashboard-bancodesangue-dados.html">Meus dados</a>
+                <a href="./dashboard-bancodesangue-estoque.html">Meu estoque</a>
+                <a href="./dashboard-bancodesangue-agendamentos.html">Agendamentos</a>
+                <a href="./dashboard-bancodesangue-gráfico.html">Dashboard</a>
+                <div id="btn-sair">
+                <a href="../home.html" >Sair</a>
+                </div>
+                
+            </div>
+            <!-- Elemento para abrir a barra de navegação -->
+            <span id="btn-abrir">☰</span>
+        </aside>
+
+        <!-- área que aparecerá o conteúdo dos links-->
+        <div class="principal">
+            <section class="section-1"> 
+                <div class="texto-esquerda">
+                    <h3 class="texto-quadro">Confirmados</h3>
+                    <h3>985</h3>
+                </div>
+            </section>
+            <section class="section-2"> 
+                <div class="texto-direita">
+                    <h3 class="texto-quadro">Novos agendamentos</h3>
+                </div>
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Doador</th>
+                            <th>Dia</th>
+                            <th>Horário</th>
+                            <th>Sangue</th>
+                            <th class="center">Confirmação</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Steve jobs</td>
+                            <td>27/08/1975</td>
+                            <td>07:00</td>
+                            <td>O+</td>
+                            <td class="center" ><button class="botao-whatsapp" onclick="alert('ola')"><img src="img/whatsapp.png" alt="" srcset=""></button></td>
+                        </tr>
+                        <tr>
+                            <td>Bill Gates</td>
+                            <td>27/08/1975</td>
+                            <td>07:00</td>
+                            <td>AB+</td>
+                            <td class="center" ><button class="botao-whatsapp" onclick="alert('ola')"><img src="img/whatsapp.png" alt="" srcset=""></button></td>                           
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="section-3">
+                <div class="texto-direita">
+                    <h3 class="texto-quadro">Agendamentos Cancelados </h3>
+                </div>              
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Doador</th>
+                            <th>Dia</th>
+                            <th>Horário</th>
+                            <th>Sangue</th>
+                            <th class="center">Confirmação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="espaco-linhas">
+                        <tr>
+                            <td>David Chaves Ferreira</td>
+                            <td>14/03/2020</td>
+                            <td>10:45</td>
+                            <td>B+</td>
+                            <td class="center" ><button class="botao-whatsapp" onclick="alert('ola')"><img src="img/whatsapp.png" alt="" srcset=""></button></td>                           
+                        </tr>
+                        <tr>
+                            <td>David Chaves Ferreira</td>
+                            <td>14/03/2020</td>
+                            <td>10:45</td>
+                            <td>B+</td>
+                            <td class="center"><button class="botao-agendar">Remarcado</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/dashboard-historico-doador.js"></script>    
+</body>
+</html>
