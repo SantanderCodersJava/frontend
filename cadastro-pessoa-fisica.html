@@ -60,7 +60,7 @@
   <main role="main">
 
 
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form id="form-cadastro-doador" method="POST" action="" enctype="multipart/form-data">
 
 
       <div class="container silhuette">
@@ -90,21 +90,21 @@
               <div class="col">Nome</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="text" name="nome"></div>
+              <div class="col"><input id="nome-doador" class="textboxG" type="text" name="nome"></div>
             </div>
             <br />
             <div class="row">
               <div class="col">email</div>
             </div>
               <div class="row">
-              <div class="col"><input class="textboxG" type="email" name="email"></div>
+              <div class="col"><input  id="email-doador"  class="textboxG" type="email" name="email"></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Telefone</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="tel" name="telefone"></div>
+              <div class="col"><input  id="telefone-doador"  class="textboxG" type="tel" name="telefone"></div>
             </div>
             <br />
             <div class="row">
@@ -113,36 +113,43 @@
             <div class="row">
               <div class="col">
                 <input class="textboxM" type="text" name="feminino" placeholder="Feminino">
-                <input class="rbGender" type="radio" name="gender" value="masculino" placeholder="">
+                <input class="rbGender" type="radio" name="gender" value="feminino" placeholder="">
               </div>
               <div class="col">
                 <input class="textboxM" type="text" name="masculino" placeholder="Masculino">
-              <input class="rbGender" type="radio" name="gender" value="masculino" placeholder="">
+                <input class="rbGender" type="radio" name="gender" value="masculino" placeholder="">
               </div>
             </div>
             <br />
+
           </div>
 
           <div class="bodyright">
             <div class="row">
+              <div class="col">Senha</div>
+            </div>
+            <div class="row">
+              <div class="col"><input id="senha-doador" class="textboxG" type="text" name="senha"></div>
+            </div>
+            <div class="row">
               <div class="col">CPF</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="text" name="cpf" placeholder=""></div>
+              <div class="col"><input id="cpf-doador" class="textboxG" type="text" name="cpf" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">RG</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="text" name="rg" placeholder=""></div>
+              <div class="col"><input id="rg-doador" class="textboxG" type="text" name="rg" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Data de Nascimento</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="date" name="dataNascimento"></div>
+              <div class="col"><input id="dt-nasc-doador" class="textboxG" type="date" name="dataNascimento"></div>
             </div>
             <br />
              
@@ -170,7 +177,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <input class="textboxM" name="cep" type="text" id="cep" value="" size="10" maxlength="9" />
+                <input class="textboxM" name="cep" type="text" id="cep-doador" value="" size="10" maxlength="9" />
                </div>
              </div>
             <br />
@@ -179,7 +186,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <input class="textboxGG" name="rua" type="text" id="rua" size="60" />
+                <input class="textboxGG" name="rua" type="text" id="rua-doador" size="60" />
               </div>
              </div>
             <br />
@@ -188,8 +195,8 @@
               <div div class="col">Complemento</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxM" type="text" id="numero" name="numero"></div>
-              <div class="col"><input class="textboxM" type="text" name="complemento"></div>
+              <div class="col"><input class="textboxM" type="text" id="numero-doador" name="numero"></div>
+              <div class="col"><input class="textboxM" type="text" id="complemento-doador" name="complemento"></div>
                </div>
                <br />
             <div class="row">
@@ -197,7 +204,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <input class="textboxGG" name="bairro" type="text" id="bairro" size="40" />
+                <input class="textboxGG" name="bairro" type="text" id="bairro-doador" size="40" />
               </div>
             </div>
             <br />
@@ -207,9 +214,9 @@
             </div>
             <div class="row">
               <div class="col">
-                <input class="textboxG" name="cidade" type="text" id="cidade" size="40" />
+                <input class="textboxG" name="cidade" type="text" id="cidade-doador" size="40" />
                </div>
-              <div class="col"><select id="uf" name="estado" class="optionboxG">
+              <div class="col"><select id="uf-doador" name="estado" class="optionboxG">
                <option value=""></option>
                 <option value="ES">ES</option>
                 <option value="MG">MG</option>
@@ -246,16 +253,16 @@
                 <div class=""><input class="rbpositivo" type="radio" name="gotaMais" hidden></div>
 
                 <div class=""><img class="positivo" name="apositivo" src="./img/gotaA.png"></div>
-                <div class=""><input class="rbpositivo" type="radio" name="type" value="A"></div>
+                <div class=""><input class="rbpositivo" type="radio" name="type" value="0"></div>
 
                 <div class=""><img class="positivo" name="bpositivo" src="./img/gotaB.png"></div>
-                <div class=""><input class="rbpositivo" type="radio" name="type" value="B"></div>
+                <div class=""><input class="rbpositivo" type="radio" name="type" value="2"></div>
 
                 <div class=""><img class="positivo" name="abpositivo" src="./img/gotaAB.png"></div>
-                <div class=""><input class="rbpositivo" type="radio" name="type" value="AB"></div>
+                <div class=""><input class="rbpositivo" type="radio" name="type" value="4"></div>
 
                 <div class=""><img class="positivo" name="opositivo" src="./img/gotaO.png"></div>
-                <div class=""><input class="rbpositivo" type="radio" name="type" value="O"></div>
+                <div class=""><input class="rbpositivo" type="radio" name="type" value="6"></div>
               </div>
 
                <div class="row">
@@ -263,16 +270,16 @@
                 <div><input class="rbpositivo" type="radio" name="gotaMenos" hidden></div>
 
                 <div class=""><img class="positivo" name="anegativo" src="./img/gotaA-.png"></div>
-                <div><input class="rbpositivo" type="radio" name="type" value="anegativo"></div>
+                <div><input class="rbpositivo" type="radio" name="type" value="1"></div>
 
                 <div class=""><img class="positivo" name="bnegativo" src="./img/gotaB-.png"></div>
-                <div><input class="rbpositivo" type="radio" name="type" value="bnegativo"></div>
+                <div><input class="rbpositivo" type="radio" name="type" value="3"></div>
 
                 <div class=""><img class="positivo" name="abnegativo" src="./img/gotaAB-.png"></div>
-                <div><input class="rbpositivo" type="radio" name="type" value="abnegativo"></div>
+                <div><input class="rbpositivo" type="radio" name="type" value="5"></div>
 
                 <div class=""><img class="positivo" name="onegativo" src="./img/gotaO-.png"></div>
-                <div><input class="rbpositivo" type="radio" name="type" value="onegativo"></div>
+                <div><input class="rbpositivo" type="radio" name="type" value="7"></div>
               
                </div> 
               </div>
@@ -353,6 +360,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+
+  <script src="js/integracao-doador.js"></script>
+  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
   
 </body>
 
