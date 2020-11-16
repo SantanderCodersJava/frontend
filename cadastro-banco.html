@@ -60,7 +60,7 @@
   <main role="main">
 
 
-    <form id="form" method="POST" action="" enctype="multipart/form-data">
+    <form id="formulario-cadastro" method="POST" action="" enctype="multipart/form-data">
 
 
       <div class="container silhuette">
@@ -113,7 +113,14 @@
             <div class="row">
               <div class="col"><input class="textboxG" id="telefonecontato" type="text" name="telefonecontato" placeholder="(11) 3333-3333"></div>
             </div>
+            <div class="row">
+              <div class="col">Senha</div>
+            </div>
+            <div class="row">
+              <div class="col"><input class="textboxG" id="senha" type="password" name="senha" ></div>
+            </div>
             <br />
+           
           </div>
 
           <div class="bodyright">
@@ -135,7 +142,7 @@
               <div class="col">Email para Contato</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" id="emailcontato" type="email" name="emailcontato" placeholder="maria@bancodesangue.gov.br"></div>
+              <div class="col"><input class="textboxG" id="emailContato" type="email" name="emailcontato" placeholder="maria@bancodesangue.gov.br"></div>
             </div>
             <br />
             <div class="row">
@@ -184,7 +191,7 @@
             </div>
             <div class="row">
               <div class="col"><input class="textboxM" type="text" id="numero" name="numero"></div>
-              <div class="col"><input class="textboxM" type="text" name="complemento"></div>
+              <div class="col"><input class="textboxM" type="text" id="comp" name="complemento"></div>
             </div>
             <br />
             <div class="row">
@@ -257,16 +264,16 @@
               <div class=""><input class="rbpositivo" type="checkbox" name="gotaMais" hidden></div>
 
               <div class=""><img class="positivo" name="apositivo" src="./img/gotaA.png"></div>
-              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="A"></div>
+              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="0"></div>
 
               <div class=""><img class="positivo" name="bpositivo" src="./img/gotaB.png"></div>
-              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="B"></div>
+              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="2"></div>
 
               <div class=""><img class="positivo" name="abpositivo" src="./img/gotaAB.png"></div>
-              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="AB"></div>
+              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="4"></div>
 
               <div class=""><img class="positivo" name="opositivo" src="./img/gotaO.png"></div>
-              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="O"></div>
+              <div class=""><input class="rbpositivo" type="checkbox" name="type" value="7"></div>
             </div>
 
             <div class="row blood">
@@ -274,16 +281,16 @@
               <div><input class="rbpositivo" type="checkbox" name="gotaMenos" hidden></div>
 
               <div class=""><img class="positivo" name="anegativo" src="./img/gotaA-.png"></div>
-              <div><input class="rbpositivo" type="checkbox" name="type" value="anegativo"></div>
+              <div><input class="rbpositivo" type="checkbox" name="type" value="1"></div>
 
               <div class=""><img class="positivo" name="bnegativo" src="./img/gotaB-.png"></div>
-              <div><input class="rbpositivo" type="checkbox" name="type" value="bnegativo"></div>
+              <div><input class="rbpositivo" type="checkbox" name="type" value="3"></div>
 
               <div class=""><img class="positivo" name="abnegativo" src="./img/gotaAB-.png"></div>
-              <div><input class="rbpositivo" type="checkbox" name="type" value="abnegativo"></div>
+              <div><input class="rbpositivo" type="checkbox" name="type" value="5"></div>
 
               <div class=""><img class="positivo" name="onegativo" src="./img/gotaO-.png"></div>
-              <div><input class="rbpositivo" type="checkbox" name="type" value="onegativo"></div>
+              <div><input class="rbpositivo" type="checkbox" name="type" value="7"></div>
             </div>
           </div>
         </section>
@@ -395,6 +402,9 @@
     <script src="./js/plugins/localization/messages_pt_BR.js"></script>
     <script src="./js/plugins/additional-methods.min.js"></script>
     <script src='./js/cadastro_banco.js'></script> -->
+
+    <script src="js/integracao-banco.js"></script>
+    <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
 
 </body>
 
