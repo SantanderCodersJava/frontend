@@ -39,7 +39,6 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
     }
 
     //------------------
-    
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
     const doador =  {
         nome : nomeDoador,

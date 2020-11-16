@@ -60,7 +60,7 @@
   <main role="main">
 
 
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form method="POST" action="" id="formulario-cadastro" enctype="multipart/form-data">
 
 
       <div class="container silhuette">
@@ -90,45 +90,45 @@
               <div class="col">Empresa - Razão Social</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxGG" type="text" name="nome" placeholder=""></div>
+              <div class="col"><input class="textboxGG" id="razao-social" type="text" name="nome" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">CNPJ</div>
             </div>
               <div class="row">
-              <div class="col"><input class="textboxG" type="text" name="cnpj" placeholder=""></div>
+              <div class="col"><input class="textboxG" id="cnpj" type="text" name="cnpj" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">email - empresa</div>
             </div>
               <div class="row">
-              <div class="col"><input class="textboxG" type="email" name="emailEmpresa" placeholder=""></div>
+              <div class="col"><input class="textboxG" id="email-empresa" type="email" name="emailEmpresa" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Telefone</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="tel" name="telefone" placeholder=""></div>
+              <div class="col"><input class="textboxG" id="telefone" type="tel" name="telefone" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Contato - Nome</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="text" name="contato" placeholder=""></div>
+              <div class="col"><input class="textboxG" id="nome-contato" type="text" name="contato" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Quantidade de Colaboradores</div>
             </div>
-          
+           
           </div>
 
           <div class="bodyright">
-            <div class="row">
+           <div class="row">
               <div class="col">&nbsp;</div>
             </div>
             <div class="row">
@@ -139,31 +139,30 @@
               <div class="col">I.E</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="text" name="rg" placeholder=""></div>
+              <div class="col"><input class="textboxG" id="ie" type="text" name="rg" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Data de Fundação</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="date" name="dataFundacao"></div>
+              <div class="col"><input class="textboxG" id="fundacao" type="date" name="dataFundacao"></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Telefone 2</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="tel" name="telefone2" placeholder=""></div>
+              <div class="col"><input class="textboxG" type="tel" id="telefone2" name="telefone2" placeholder=""></div>
             </div>
             <br />
             <div class="row">
               <div class="col">Contato - email</div>
             </div>
             <div class="row">
-              <div class="col"><input class="textboxG" type="email" name="emailContato" placeholder=""></div>
+              <div class="col"><input class="textboxG" type="email" id="emailContato" name="emailContato" placeholder=""></div>
             </div>
-           
-           
+                  
           </div>
 
           
@@ -177,7 +176,7 @@
              <input class="rbGender" type="radio" name="porte" value="51a100" placeholder="">
              <label class="" type="text" name="51a200">51 a 200</label>
              &nbsp; &nbsp;
-             <input class="rbGender" type="radio" name="porte" value="51a100" placeholder="">
+             <input class="rbGender" type="radio" name="porte" value="201a500" placeholder="">
              <label class="" type="text" name="201a500">201 a 500</label>
              &nbsp; &nbsp;
            <input class="rbGender" type="radio" name="porte" value="501a1000" placeholder="">
@@ -286,10 +285,10 @@
       <div class="row">
         <div class="col">Numero</div>
         <div div class="col">Complemento</div>
-      </div>
+      </div>      
       <div class="row">
         <div class="col"><input class="textboxM" type="text" id="numero" name="numero"></div>
-        <div class="col"><input class="textboxM" type="text" name="complemento"></div>
+        <div class="col"><input class="textboxM" type="text" id="comp" name="complemento"></div>
          </div>
          <br />
       <div class="row">
@@ -316,6 +315,8 @@
           <option value="RJ">RJ</option>
           <option value="SP">SP</option>
         </select></div>
+
+       
       </div>
       <br />
     </div>
@@ -421,6 +422,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-</body>
 
+  <script src="js/integracao-empresa.js"></script>
+  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+</body>
 </html>
