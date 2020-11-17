@@ -288,7 +288,7 @@ label.photo{
     margin-top: 3%;
     display: flexbox;
     width: 800px;
-    height: 400px auto;
+    height: 450px auto;
     justify-items: center;
     /* background: #174745; */
 }
@@ -354,7 +354,7 @@ label.photo{
     display: flex;
     /* background: #faf064; */
     width: 800px;
-    height: 334px;
+    height: 400px;
     padding: 20px;
     border: 1px solid #EE0909;
     border-radius: 10px;

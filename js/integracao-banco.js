@@ -3,7 +3,7 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
 
     event.preventDefault();
 
-    // PEGA OS VALORES QUE O USUARIO DIGITOU NO CADASTRO DE PESSOA FISICA
+    // PEGA OS VALORES QUE O USUARIO DIGITOU NO CADASTRO DE BANCO DE SANGUE
     const nome = document.getElementById("nome").value;
     const cnpj = document.getElementById("cnpj").value;
     const nomeContato = document.getElementById("contato").value;

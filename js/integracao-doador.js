@@ -72,7 +72,7 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
     })
 
     api.post("/doadores", doador)
-    .then(res => {
+    .then(res => { 
         alert("Doador cadastrado com sucesso!")
     })
     .catch(err => {
