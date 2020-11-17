@@ -1,4 +1,3 @@
-
 document.getElementById("form-cadastro-doador").onsubmit = function( event ){
 
     event.preventDefault();
@@ -50,7 +49,7 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
         sexo : opcaoSexo,
         tipo_sanguineo : opcaoTipoSangue,
         senha : senha,
-        caminho_img : "xxxxx",
+        caminho_img : "",
         enderecos : [
             {
                 rua : ruaDoador,
@@ -80,6 +79,25 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
     })
 
 }
+
+//UPLOAD DE ARQUIVOS
+
+const fileInput = document.getElementById("imagem")
+
+fileInput.addEventListener("change", (event) => {
+    const img = event.target.files[0]
+
+    const formData = new FormData()
+
+    formData.append("image", img)
+
+    
+    axios.post("http://localhost:8080/doadores/upload", formData)
+    .then(res => console.log(res.data))
+
+  
+})
+
 
 
 
