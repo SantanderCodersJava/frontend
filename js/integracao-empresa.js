@@ -62,19 +62,7 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
     
     //------------------
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
-    const empresa =  {
-        razao_social : razao,
-        email_empresa : emailEmp,
-        cnpj_empresa : cnpj,
-        telefone_1 : tel,
-        telefone_2 : tel2,
-        data_fundacao : fundacao,
-        inscricao_estadual : ie,
-        nome_contato : nomeContato,
-        email_contato : emailContato,
-        quantidade_colaboradores : qtdColaboradores,
-        enderecos : [
-            {
+    const endereco =  {
                 rua : rua,
                 numero : numero, 
                 complemento : compl, 
@@ -83,19 +71,28 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
                 estado : estado,
                 cep : cep,
                 latitude : null,
-                longitude : null
-            }
-        ]
+                longitude : null,
+                empresa : { 
+                    razao_social : razao,
+                    email_empresa : emailEmp,
+                    cnpj_empresa : cnpj,
+                    telefone_1 : tel,
+                    telefone_2 : tel2,
+                    data_fundacao : fundacao,
+                    inscricao_estadual : ie,
+                    nome_contato : nomeContato,
+                    email_contato : emailContato,
+                    quantidade_colaboradores : qtdColaboradores
+                }        
     }
 
-    console.log(empresa)
 
     // FAÇO A REQUISIÇÃO
     const api = axios.create({
         baseURL: "http://localhost:8080",
     })
 
-    api.post("/empresas", empresa)
+    api.post("/enderecos", endereco)
     .then(res => {
         alert("Empresa cadastrada com sucesso!")
     })
