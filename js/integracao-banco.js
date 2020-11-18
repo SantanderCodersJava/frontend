@@ -1,9 +1,32 @@
+   //UPLOAD DE ARQUIVOS
+
+   const fileInput = document.getElementById("imagem")
+
+   let caminhoImg
+   
+   fileInput.addEventListener("change", (event) => {
+   const img = event.target.files[0]
+
+   const formData = new FormData()
+
+   formData.append("image", img)
+
+   
+   axios.post("http://localhost:8080/doadores/upload", formData)
+   .then(res => {
+           caminhoImg = res.data
+           console.log(caminhoImg)
+
+   })
+
+ 
+})
 
 document.getElementById("formulario-cadastro").onsubmit = function( event ){
 
     event.preventDefault();
 
-    // PEGA OS VALORES QUE O USUARIO DIGITOU NO CADASTRO DE PESSOA FISICA
+    // PEGA OS VALORES QUE O USUARIO DIGITOU NO CADASTRO DE BANCO DE SANGUE
     const nome = document.getElementById("nome").value;
     const cnpj = document.getElementById("cnpj").value;
     const nomeContato = document.getElementById("contato").value;
