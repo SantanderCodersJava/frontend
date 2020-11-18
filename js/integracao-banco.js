@@ -1,3 +1,26 @@
+   //UPLOAD DE ARQUIVOS
+
+   const fileInput = document.getElementById("imagem")
+
+   let caminhoImg
+   
+   fileInput.addEventListener("change", (event) => {
+   const img = event.target.files[0]
+
+   const formData = new FormData()
+
+   formData.append("image", img)
+
+   
+   axios.post("http://localhost:8080/doadores/upload", formData)
+   .then(res => {
+           caminhoImg = res.data
+           console.log(caminhoImg)
+
+   })
+
+ 
+})
 
 document.getElementById("formulario-cadastro").onsubmit = function( event ){
 
