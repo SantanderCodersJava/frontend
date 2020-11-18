@@ -40,19 +40,7 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
 
     //------------------
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
-    const doador =  {
-        nome : nomeDoador,
-        rg : rgDoador,
-        data_nascimento : dtNasc,
-        email : email,
-        cpf : cpf,
-        telefone : telefone,
-        sexo : opcaoSexo,
-        tipo_sanguineo : opcaoTipoSangue,
-        senha : senha,
-        caminho_img : "xxxxx",
-        enderecos : [
-            {
+    const endereco =  {
                 rua : ruaDoador,
                 numero : numero, 
                 complemento : complemento, 
@@ -61,9 +49,19 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
                 estado : estado,
                 cep : cep,
                 latitude : null,
-                longitude : null
-            }
-        ]
+                longitude : null,
+                doador : {
+                    nome : nomeDoador,
+                    rg : rgDoador,
+                    data_nascimento : dtNasc,
+                    email : email,
+                    cpf : cpf,
+                    telefone : telefone,
+                    sexo : opcaoSexo,
+                    tipo_sanguineo : opcaoTipoSangue,
+                    senha : senha,
+                    caminho_img : "xxxxx",
+                }
     }
 
     // FAÇO A REQUISIÇÃO
@@ -71,7 +69,7 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
         baseURL: "http://localhost:8080",
     })
 
-    api.post("/doadores", doador)
+    api.post("/enderecos", endereco)
     .then(res => {
         alert("Doador cadastrado com sucesso!")
     })

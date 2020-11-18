@@ -41,41 +41,36 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
     
     //------------------
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
-    const banco =  {
-
-    nome : nome,
-	email : emailinstitucional,
-	cnpj : cnpj,
-	telefone : tel,
-	nome_contato : nomeContato,
-	email_contato : emailContato,
-	telefone_contato : telContato,
-	cargo : cargo,
-	senha : senha,
-
-        enderecos : [
-            {
-                rua : rua,
-                numero : numero, 
-                complemento : compl, 
-                bairro : bairro,
-                cidade : cidade,
-                estado : estado,
-                cep : cep,
-                latitude : null,
-                longitude : null
-            }
-        ]
+    const endereco = {
+        rua : rua,
+        numero : numero, 
+        complemento : compl, 
+        bairro : bairro,
+        cidade : cidade,
+        estado : estado,
+        cep : cep,
+        latitude : null,
+        longitude : null,
+        bancosangue : {
+            nome : nome,
+            email : emailinstitucional,
+            cnpj : cnpj,
+            telefone : tel,
+            nome_contato : nomeContato,
+            email_contato : emailContato,
+            telefone_contato : telContato,
+            cargo : cargo,
+            senha : senha,
+        }      
     }
 
-    console.log(banco)
 
     // FAÇO A REQUISIÇÃO
     const api = axios.create({
         baseURL: "http://localhost:8080",
     })
 
-    api.post("/banco", banco)
+    api.post("/enderecos", endereco)
     .then(res => {
         alert("Banco de sangue cadastrado com sucesso!")
     })
