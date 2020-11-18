@@ -1,7 +1,32 @@
 
+    //UPLOAD DE ARQUIVOS
+
+    const fileInput = document.getElementById("imagem")
+
+    let caminhoImg
+    
+    fileInput.addEventListener("change", (event) => {
+    const img = event.target.files[0]
+
+    const formData = new FormData()
+
+    formData.append("image", img)
+
+    
+    axios.post("http://localhost:8080/doadores/upload", formData)
+    .then(res => {
+            caminhoImg = res.data
+            console.log(caminhoImg)
+
+    })
+
+  
+})
+
 document.getElementById("form-cadastro-doador").onsubmit = function( event ){
 
     event.preventDefault();
+
 
     // PEGA OS VALORES QUE O USUARIO DIGITOU NO CADASTRO DE PESSOA FISICA
     const nomeDoador = document.getElementById("nome-doador").value;
@@ -50,7 +75,7 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
         sexo : opcaoSexo,
         tipo_sanguineo : opcaoTipoSangue,
         senha : senha,
-        caminho_img : "xxxxx",
+        caminho_img : caminhoImg,
         enderecos : [
             {
                 rua : ruaDoador,
@@ -80,6 +105,9 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
     })
 
 }
+
+
+
 
 
 
