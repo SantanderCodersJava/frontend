@@ -22,7 +22,7 @@
  
 })
 
-document.getElementById("formulario-cadastro").onsubmit = function( event ){
+document.getElementById("formulario-cadastro").onsubmit = async function( event ){
 
     event.preventDefault();
 
@@ -49,7 +49,9 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
 
     const inputTipoSangue = document.getElementsByClassName("rbpositivo");
 
-   /* let tiposSangue = {};
+    let tipoSanguineo = []
+
+   let tiposSangue = {};
 
     for(let i = 0; i < inputTipoSangue.length; i++){
         if(inputTipoSangue[i].checked) {
@@ -57,10 +59,12 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
             tiposSangue = {
                 tipoDeSangue : inputTipoSangue[i].value,
                 quantidade_tipo : 0
+
             }
+            tipoSanguineo.push(tiposSangue)
         }
     }
-    */
+    console.log(tipoSanguineo)
     
     //------------------
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
@@ -84,6 +88,7 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
             telefone_contato : telContato,
             cargo : cargo,
             senha : senha,
+            caminho_img : caminhoImg,
         }      
     }
 
@@ -93,8 +98,27 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
         baseURL: "http://localhost:8080",
     })
 
-    api.post("/enderecos", endereco)
+
+
+    await api.post("/enderecos", endereco)
     .then(res => {
+        idBanco = res.data.id_banco
+        let sangue = {}
+        for(let i = 0; i < tipoSanguineo.length; i++) {
+            sangue = {
+                id_banco : idBanco,
+                tipo_de_sangue: tipoSanguineo[i].tiposSangue.tipoDeSangue,
+                quantidade_tipo: tipoSanguineo[i].tiposSangue.quantidade_tipo,
+            }
+           await api.post("/tiposanguineo", sangue)
+            .then(res => {
+                alert("solicitação feita com sucesso!")
+            })
+            .catch(err => {
+                alert("Erro na solicitação");
+            })
+        }
+        
         alert("Banco de sangue cadastrado com sucesso!")
     })
     .catch(err => {
