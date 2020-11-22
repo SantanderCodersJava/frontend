@@ -1,25 +1,27 @@
    //UPLOAD DE ARQUIVOS
 
-   const fileInput = document.getElementById("imagem")
+const api = axios.create({
+    baseURL: "http://localhost:8080",
+})
 
-   let caminhoImg
-   
-   fileInput.addEventListener("change", (event) => {
-   const img = event.target.files[0]
+const fileInput = document.getElementById("imagem");
 
-   const formData = new FormData()
+let caminhoImg;
 
-   formData.append("image", img)
+fileInput.addEventListener("change", (event) => {
+    const img = event.target.files[0];
+    const formData = new FormData();
 
-   
-   axios.post("http://localhost:8080/doadores/upload", formData)
-   .then(res => {
-           caminhoImg = res.data
-           console.log(caminhoImg)
+    formData.append("image", img);
 
-   })
-
- 
+    api.post("doadores/upload", formData)
+    .then(res => {
+        caminhoImg = res.data;
+        console.log(caminhoImg);
+    })
+    .catch(err => {
+        console.log(err);
+    })
 })
 
 document.getElementById("formulario-cadastro").onsubmit = async function( event ){
@@ -46,27 +48,9 @@ document.getElementById("formulario-cadastro").onsubmit = async function( event 
     const cidade = document.getElementById("cidade").value;
     const estado = document.getElementById("uf").value;
     /**/
-
     const inputTipoSangue = document.getElementsByClassName("rbpositivo");
 
-    let tipoSanguineo = []
-
-   let tiposSangue = {};
-
-    for(let i = 0; i < inputTipoSangue.length; i++){
-        if(inputTipoSangue[i].checked) {
-
-            tiposSangue = {
-                tipoDeSangue : inputTipoSangue[i].value,
-                quantidade_tipo : 0
-
-            }
-            tipoSanguineo.push(tiposSangue)
-        }
-    }
-    console.log(tipoSanguineo)
-    
-    //------------------
+       
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
     const endereco = {
         rua : rua,
@@ -94,32 +78,23 @@ document.getElementById("formulario-cadastro").onsubmit = async function( event 
 
 
     // FAÇO A REQUISIÇÃO
-    const api = axios.create({
-        baseURL: "http://localhost:8080",
-    })
-
-
-
-    await api.post("/enderecos", endereco)
+    api.post("/enderecos", endereco)
     .then(res => {
-        idBanco = res.data.id_banco
-        let sangue = {}
-        for(let i = 0; i < tipoSanguineo.length; i++) {
-            sangue = {
-                id_banco : idBanco,
-                tipo_de_sangue: tipoSanguineo[i].tiposSangue.tipoDeSangue,
-                quantidade_tipo: tipoSanguineo[i].tiposSangue.quantidade_tipo,
+
+        for(let i = 0; i < inputTipoSangue.length; i++){
+
+            if(inputTipoSangue[i].checked) {    
+                api.post("/tiposanguineo",  {bancoSangue : res.data.bancosangue, tipoDeSangue : inputTipoSangue[i].value, quantidadeTipo : 0})
+                .then(res => {
+                   
+                })
+                .catch(err => {
+                    alert("Erro na solicitação");
+                })
             }
-           await api.post("/tiposanguineo", sangue)
-            .then(res => {
-                alert("solicitação feita com sucesso!")
-            })
-            .catch(err => {
-                alert("Erro na solicitação");
-            })
-        }
+        } 
         
-        alert("Banco de sangue cadastrado com sucesso!")
+        alert("Banco de sangue cadastrado com sucesso!");    
     })
     .catch(err => {
         alert("Erro ao cadastrar");
