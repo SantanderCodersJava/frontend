@@ -62,17 +62,17 @@ document.getElementById("formulario-cadastro").onsubmit = async function( event 
         cep : cep,
         latitude : null,
         longitude : null,
-        bancosangue : {
+        bancoSangue : {
             nome : nome,
             email : emailinstitucional,
             cnpj : cnpj,
             telefone : tel,
-            nome_contato : nomeContato,
-            email_contato : emailContato,
-            telefone_contato : telContato,
+            nomeContato : nomeContato,
+            emailContato : emailContato,
+            telefoneContato : telContato,
             cargo : cargo,
             senha : senha,
-            caminho_img : caminhoImg,
+            caminhoImg : caminhoImg,
         }      
     }
 
@@ -84,7 +84,7 @@ document.getElementById("formulario-cadastro").onsubmit = async function( event 
         for(let i = 0; i < inputTipoSangue.length; i++){
 
             if(inputTipoSangue[i].checked) {    
-                api.post("/tiposanguineo",  {bancoSangue : res.data.bancosangue, tipoDeSangue : inputTipoSangue[i].value, quantidadeTipo : 0})
+                api.post("/tiposanguineo",  {bancoSangue : res.data.bancoSangue, tipoDeSangue : inputTipoSangue[i].value, quantidadeTipo : 0})
                 .then(res => {
                    
                 })
@@ -93,7 +93,7 @@ document.getElementById("formulario-cadastro").onsubmit = async function( event 
                 })
             }
         } 
-        
+
         alert("Banco de sangue cadastrado com sucesso!");    
     })
     .catch(err => {

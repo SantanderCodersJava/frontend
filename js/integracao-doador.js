@@ -1,32 +1,28 @@
 
-    //UPLOAD DE ARQUIVOS
+ //UPLOAD DE ARQUIVOS
 
-    const fileInput = document.getElementById("imagem")
+const fileInput = document.getElementById("imagem")
 
-    let caminhoImg
+let caminhoImg
     
-    fileInput.addEventListener("change", (event) => {
+fileInput.addEventListener("change", (event) => {
     const img = event.target.files[0]
 
     const formData = new FormData()
 
     formData.append("image", img)
 
-    
     axios.post("http://localhost:8080/doadores/upload", formData)
     .then(res => {
             caminhoImg = res.data
             console.log(caminhoImg)
 
     })
-
-  
 })
 
 document.getElementById("form-cadastro-doador").onsubmit = function( event ){
 
     event.preventDefault();
-
 
     // PEGA OS VALORES QUE O USUARIO DIGITOU NO CADASTRO DE PESSOA FISICA
     const nomeDoador = document.getElementById("nome-doador").value;
@@ -79,30 +75,29 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
         doador : {
             nome : nomeDoador,
             rg : rgDoador,
-            data_nascimento : dtNasc,
+            dataNascimento : dtNasc,
             email : email,
             cpf : cpf,
             telefone : telefone,
             sexo : opcaoSexo,
-            tipo_sanguineo : opcaoTipoSangue,
+            tipoSanguineo : opcaoTipoSangue,
             senha : senha,
-            caminho_img : caminhoImg,
+            caminhoImg : caminhoImg,
         }
-}
+    }
 
-// FAÇO A REQUISIÇÃO
-const api = axios.create({
-    baseURL: "http://localhost:8080",
-})
-
-api.post("/enderecos", endereco)
-    .then(res => {
-
-alert("Doador cadastrado com sucesso!")
+    // FAÇO A REQUISIÇÃO
+    const api = axios.create({
+        baseURL: "http://localhost:8080",
     })
-.catch(err => {
-    alert("Erro ao cadastrar");
-})
+
+    api.post("/enderecos", endereco)
+    .then(res => {
+        alert("Doador cadastrado com sucesso!")
+    })
+    .catch(err => {
+        alert("Erro ao cadastrar");
+    })
 
 }
 

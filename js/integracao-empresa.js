@@ -1,6 +1,3 @@
-
-
-
 document.getElementById("formulario-cadastro").onsubmit = function( event ){
 
     event.preventDefault();
@@ -35,7 +32,6 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
             qtdColaboradores = porteQtd[i].value;
         }
     }
-
     
     //------------------
     // OBJETO QUE EU ENVIO NO POST DA REQUISIÇÃO
@@ -50,19 +46,18 @@ document.getElementById("formulario-cadastro").onsubmit = function( event ){
                 latitude : null,
                 longitude : null,
                 empresa : { 
-                    razao_social : razao,
-                    email_empresa : emailEmp,
-                    cnpj_empresa : cnpj,
-                    telefone_1 : tel,
-                    telefone_2 : tel2,
-                    data_fundacao : fundacao,
-                    inscricao_estadual : ie,
-                    nome_contato : nomeContato,
-                    email_contato : emailContato,
-                    quantidade_colaboradores : qtdColaboradores
+                    razaoSocial : razao,
+                    emailEmpresa : emailEmp,
+                    cnpjEmpresa : cnpj,
+                    telefone1 : tel,
+                    telefone2 : tel2,
+                    dataFundacao : fundacao,
+                    inscricaoEstadual : ie,
+                    nomeContato : nomeContato,
+                    emailContato : emailContato,
+                    quantidadeColaboradores : qtdColaboradores
                 }        
     }
-
 
     // FAÇO A REQUISIÇÃO
     const api = axios.create({
