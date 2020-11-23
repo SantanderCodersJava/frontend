@@ -36,4 +36,3 @@ btnFechar.addEventListener("click", function closeNav() {
     principal.style.marginLeft = "100px";
 });
 
-

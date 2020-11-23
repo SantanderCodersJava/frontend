@@ -62,7 +62,7 @@
 
         <!-- área que aparecerá o conteúdo dos links-->
         <div class="principal">
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form method="POST" id="form-dados-doador" action="" enctype="multipart/form-data">
 
 
                 <div class="container silhuette">
@@ -91,7 +91,7 @@
                                 <div class="col">Nome</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxG" type="text" name="nome" placeholder="Nome">
+                                <div class="col"><input class="textboxG" id="nome-doador" type="text" name="nome" placeholder="Nome">
                                 </div>
                             </div>
                             <br />
@@ -99,7 +99,7 @@
                                 <div class="col">Email</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxG" type="email" name="email"
+                                <div class="col"><input class="textboxG" id="email-doador" type="email" name="email"
                                         placeholder="email@email.com"></div>
                             </div>
                             <br />
@@ -107,7 +107,7 @@
                                 <div class="col">Telefone</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxG" type="tel" name="telefone"
+                                <div class="col"><input class="textboxG" id="telefone-doador" type="tel" name="telefone"
                                         placeholder="(00) 0000-..."></div>
                             </div>
                             <br />
@@ -117,11 +117,11 @@
                             <div class="row">
                                 <div class="col sexo">
                                     <input class="textboxM" type="text" name="feminino" placeholder="Feminino">
-                                    <input class="rbGender" type="radio" name="feminino" placeholder="">
+                                    <input class="rbGender" type="radio" name="gender" value="feminino" placeholder="">
                                 </div>
                                 <div class="col">
                                     <input class="textboxM" type="text" name="masculino" placeholder="Masculino">
-                                    <input class="rbGender" type="radio" name="masculino" placeholder="">
+                                    <input class="rbGender" type="radio" name="gender" value="masculino" placeholder="">
                                 </div>
                             </div>
                             <br />
@@ -132,7 +132,7 @@
                                 <div class="col">CPF</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxG" type="text" name="cpf"
+                                <div class="col"><input class="textboxG" id="cpf-doador" type="text" name="cpf"
                                         placeholder="000.000.000-00"></div>
                             </div>
                             <br />
@@ -140,7 +140,7 @@
                                 <div class="col">RG</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxG" type="text" name="rg"
+                                <div class="col"><input class="textboxG" id="rg-doador" type="text" name="rg"
                                         placeholder="00.000.000-0"></div>
                             </div>
                             <br />
@@ -148,7 +148,7 @@
                                 <div class="col">Data de Nascimento</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxG" type="date" name="dataNascimento"></div>
+                                <div class="col"><input class="textboxG" id="dt-nasc-doador" type="date" name="dataNascimento"></div>
                             </div>
                             <br />
                         </div>
@@ -174,7 +174,7 @@
                                 <div class="col">CEP</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxM" type="text" name="cep" placeholder="00000-000">
+                                <div class="col"><input class="textboxM" id="cep-doador" type="text" name="cep" placeholder="00000-000">
                                 </div>
                             </div>
                             <br />
@@ -182,7 +182,7 @@
                                 <div class="col">Endereço</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxGG" type="text" name="endereco"
+                                <div class="col"><input class="textboxGG" id="rua-doador" type="text" name="endereco"
                                         placeholder="Logradouro.(Rua,Av etc)"></div>
                             </div>
                             <br />
@@ -191,9 +191,9 @@
                                 <div div class="col">Complemento</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxM" type="text" name="numero"
+                                <div class="col"><input class="textboxM" id="numero-doador" type="text" name="numero"
                                         placeholder="nº 1000"></div>
-                                <div class="col"><input class="textboxM" type="text" name="complemento"
+                                <div class="col"><input class="textboxM" id="complemento-doador" type="text" name="complemento"
                                         placeholder="ap/conj/etc"></div>
                             </div>
                             <br />
@@ -201,18 +201,18 @@
                                 <div class="col">Bairro</div>
                             </div>
                             <div class="row">
-                                <div class="col"><input class="textboxGG" type="text" name="bairro"
+                                <div class="col"><input class="textboxGG" id="bairro-doador" type="text" name="bairro"
                                         placeholder="Bairro"></div>
                             </div>
                             <br />
                             <div>
                                 <div class="d-flex flex-column div-cidade">
                                     <label for="cidade">Cidade</label>
-                                    <input class="textboxG" type="text" name="cidade" placeholder="Cidade">
+                                    <input class="textboxG" type="text" id="cidade-doador" name="cidade" placeholder="Cidade">
                                 </div>
                                 <div class="d-flex flex-column">
                                     <label for="estado">Estado</label>
-                                    <input class="textboxG" type="text" name="estado" placeholder="Estado">
+                                    <input class="textboxG" type="text" id="uf-doador" name="estado" placeholder="Estado">
                                 </div>
                             </div>
                                 
@@ -236,6 +236,10 @@
 
     </main>
 
+    <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+    <script src="js/dashboard-doador-meus-dados.js"></script>
+    
     <script src="js/dashboard-doador-principal.js"></script>
 </body>
 

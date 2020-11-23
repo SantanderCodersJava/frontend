@@ -22,6 +22,8 @@ document.getElementById("formDonator").onsubmit = function(event) {
     api.post("doadores/auth", loginDoador)
         .then(res => {
             //console.log(res.data)
+            const respDoador = res.data
+            localStorage.setItem("__login-info", JSON.stringify(respDoador))
             window.location.href="./dashboard/dashboard-doador-principal.html"
             alert("Login efetuado com sucesso!")
         })
@@ -54,6 +56,8 @@ document.getElementById("formBloodDonorCenter").onsubmit = function(event) {
     api.post("banco/auth", loginBanco)
         .then(res => {
             //console.log(res.data)
+            const respBanco = res.data
+            localStorage.setItem("__login-info", JSON.stringify(respBanco))
             window.location.href="./dashboard/bancodesangue-principal.html"
             alert("Login efetuado com sucesso!")
         })
