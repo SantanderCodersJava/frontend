@@ -58,7 +58,7 @@ document.getElementById("formBloodDonorCenter").onsubmit = function(event) {
             //console.log(res.data)
             const respBanco = res.data
             localStorage.setItem("__login-info", JSON.stringify(respBanco))
-            window.location.href="./dashboard/bancodesangue-principal.html"
+            window.location.href="./dashboard/dashboard-bancodesangue-principal.html"
             alert("Login efetuado com sucesso!")
         })
         .catch(err => {
