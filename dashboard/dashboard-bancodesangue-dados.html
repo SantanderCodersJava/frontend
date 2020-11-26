@@ -64,19 +64,19 @@
 
         <!-- área que aparecerá o conteúdo dos links-->
         <div class="principal">
-            <form id="formCont" action="" method="POST">
+            <form method="POST" id="form-dados-banco" action="" enctype="multipart/form-data">
                 <div class="form-row">
                     <!--Nome do Contato-->
                     <div class="form-group col-md-5">
                         <label for="nome_contato">Nome para contato: </label>
-                        <input class="form-control" id="nomeContato" type="text" placeholder="Maria Silva"
-                            name="nome_contato" value="" required />
+                        <input class="form-control" id="contato" type="text" placeholder=""
+                            name="nome_contato"  />
                     </div>
                     <!--Email do Contato-->
                     <div class="form-group col-md-5">
                         <label for="email_institucional">Email institucional: </label>
-                        <input class="form-control" id="emailContato" type="email" placeholder="maria@bancodesangue.gov.br"
-                            name="email_institucional" value="" required />
+                        <input class="form-control" id="emailContato" type="email" placeholder=""
+                            name="email_institucional" />
                     </div>
                 </div>
 
@@ -84,14 +84,13 @@
                     <!--Telefone do Contato-->
                     <div class="form-group col-md-5">
                         <label for="telefone">Telefone: </label>
-                        <input class="form-control" id="tcontato" type="text" placeholder="(11) 3333-3333" name="telefone"
-                            value="" required />
+                        <input class="form-control" id="telefonecontato" type="text" placeholder="(11) 3333-3333" name="telefone"
+                            />
                     </div>
                     <!--Cargo do Contato-->
                     <div class="form-group col-md-5">
                         <label for="cargo">Cargo: </label>
-                        <input class="form-control" id="cargo" type="text" placeholder="Diretora" name="cargo" value=""
-                            required />
+                        <input class="form-control" id="cargo" type="text" placeholder="Diretora" name="cargo" />
                     </div>
                 </div>
 
@@ -100,19 +99,18 @@
                 </div>
 
                 <div class="box">
-                    <form id="formAddress" action="" method="POST">
+                    
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="cep">CEP:</label>
-                                <input class="form-control" id="cep" type="text" placeholder="00000-000" name="cep" value=""
-                                    required />
+                                <input class="form-control" id="cep" type="text" placeholder="" name="cep"  />
                             </div>
     
                             <!--Logradouro-->
                             <div class="form-group col-md-5">
                                 <label for="logradouro">Endereço:</label>
-                                <input class="form-control" id="logradouro" type="text" placeholder="Avenida Paulista" name="logradouro"
-                                    value="" required />
+                                <input class="form-control" id="rua" type="text" placeholder="" name="logradouro"
+                                   />
                             </div>
                         </div>
         
@@ -120,20 +118,19 @@
                             <!--Número-->
                             <div class="form-group col-md-2">
                                 <label for="numero">Número: </label>
-                                <input class="form-control" id="num" type="text" placeholder="3333" name="numero" value=""
-                                    required />
+                                <input class="form-control" id="numero" type="text" placeholder="" name="numero"  />
                             </div>
                             <!--Complemento-->
                             <div class="form-group col-md-4">
                                 <label for="complemento">Complemento:</label>
-                                <input class="form-control" id="complemento" type="text" placeholder="Conjunto 1111"
-                                    name="complemento" value="" required />
+                                <input class="form-control" id="comp" type="text" placeholder=""
+                                    name="complemento"  />
                             </div>
                             <!--Bairro-->
                             <div class="form-group col-md-4">
                                 <label for="bairro">Bairro:</label>
-                                <input class="form-control" id="bairro" type="text" placeholder="Higienópolis" name="bairro"
-                                    value="" required />
+                                <input class="form-control" id="bairro" type="text" placeholder="" name="bairro"
+                                     />
                             </div>
                         </div>
 
@@ -141,8 +138,8 @@
                             <!--Cidade-->
                             <div class="form-group col-md-3">
                                 <label for="cidade">Cidade:</label>
-                                <input class="form-control" id="cidade" type="text" placeholder="São Paulo" name="cidade"
-                                    value="" required />
+                                <input class="form-control" id="cidade" type="text" placeholder="" name="cidade"
+                                     />
                             </div>
                             <!--Estado-->
                             <div class="form-group col-md-2">
@@ -178,7 +175,7 @@
                                 </select>
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
 
             </form>
@@ -189,7 +186,8 @@
         </div>
     </main>
     <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
-  
+
+    <script src="js/integracao-dashboard-banco-dados.js"></script>  
 
     <script src="js/dashboard-banco-principal.js"></script>
     
