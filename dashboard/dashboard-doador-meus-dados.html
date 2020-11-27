@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard doador meus dados</title>
     <!-- Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
         <link rel="stylesheet" href="../css/styleboot.css">
     <link rel="stylesheet" href="css/dashboard-doador-principal.css">
     
@@ -67,7 +67,7 @@
 
                 <div class="container silhuette">
                     <div class="row">
-                        <img id="logo" class="cadphoto" src="img/silhueta.png">
+                        <img class="cadphoto" id="img-logo">
                         <input id="imagem" type="file" name="imagem" onchange="previewImagem()" accept="image/*">
                         <label for="imagem" class="photo" name="imagem"><img src="./img/btngotasilhueta.png"></label>
                     </div>
@@ -237,6 +237,8 @@
     </main>
 
     <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+
 
     <script src="js/integracao-dashboard-doador-meus-dados.js"></script>
     
