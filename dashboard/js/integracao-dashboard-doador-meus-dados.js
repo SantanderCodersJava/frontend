@@ -50,35 +50,35 @@ try{
   console.log(tipoSangue)
 
   switch(tipoSangue) {
-    case tipoSangue == 'APOSITIVO':
+    case 'APOSITIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/Apositive.png')
       break;
-    case tipoSangue == 'ANEGATIVO':
+    case 'ANEGATIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/Anegative.png')
       break;
-    case tipoSangue == 'BPOSITIVO':
+    case 'BPOSITIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/Bpositive.png')
       break;
-    case tipoSangue == 'BNEGATIVO':
+    case 'BNEGATIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/Bnegative.png')
       break;
-    case tipoSangue == 'ABPOSITIVO':
+    case 'ABPOSITIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/ABpositive.png')
       break;
-    case tipoSangue == 'ABNEGATIVO':
+    case 'ABNEGATIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/ABnegative.png')
       break;
-    case tipoSangue == 'OPOSITIVO':
+    case 'OPOSITIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/Opositive.png')
       break;
-    case tipoSangue == 'ONEGATIVO':
+    case 'ONEGATIVO':
       console.log(tipoSangue)
       imgTipoSangue.setAttribute("src", '../img/Onegative.png')
       break;
