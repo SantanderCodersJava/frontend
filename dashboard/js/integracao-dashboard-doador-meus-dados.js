@@ -17,10 +17,13 @@ try{
   .then(res=> res.data)
     console.log(usuario)
 
+
+
   // DADOS PESSOAIS
   document.getElementById("nome-doador").value = usuario.nome;
   document.getElementById("rg-doador").value = usuario.rg;
-  document.getElementById("dt-nasc-doador").value = usuario.dataNascimento;
+  const date = new Date (usuario.dataNascimento); 
+  document.getElementById("dt-nasc-doador").value = (new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format(date));
   document.getElementById("email-doador").value = usuario.email;
   document.getElementById("cpf-doador").value = usuario.cpf;
   document.getElementById("telefone-doador").value = usuario.telefone;
