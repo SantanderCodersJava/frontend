@@ -300,7 +300,7 @@ document.body.onload = async function(event) {
 
       console.log(nome.value);
       console.log(radios[0].checked ? radios[0].value : radios[1].value)
-      // OBJETO QUE EU ENVIO NO PUT DA REQUISIÇÃO
+      // OBJETO QUE EU ENVIO NO PUT DA REQUISIÇÃ
       
       const endereco = {
             rua : rua.value,
