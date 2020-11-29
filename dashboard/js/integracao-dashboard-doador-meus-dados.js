@@ -1,6 +1,6 @@
 function previewImagem(){
   var imagem = document.querySelector('input[name=imagem]').files[0];
-  var preview = document.querySelector('#logo');
+  var preview = document.querySelector('#img-logo');
 
   var reader = new FileReader();
 
