@@ -188,178 +188,170 @@ fileInput.addEventListener("change", async (event) => {
 
 
 document.body.onload = async function(event) {
-
-event.preventDefault();
- 
-try{
-  const usuario = await api.get(`/doadores/${JSON.parse(localStorage.getItem("__login-info")).email}`)
-
   
-  .then(res=> res.data)
+  try{
+    const usuario = await api.get(`/doadores/${JSON.parse(localStorage.getItem("__login-info")).email}`)
+    
+    .then(res=> res.data)
+
+    // DADOS PESSOAIS
+    const nome = document.getElementById("nome-doador");
+    nome.value = usuario.nome;
+
+    const rg = document.getElementById("rg-doador");
+    rg.value = usuario.rg;
+
+    const date = document.getElementById("dt-nasc-doador");
+    date.value = (new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format( new Date (usuario.dataNascimento) ));
+
+
+    const email = document.getElementById("email-doador");
+    email.value = usuario.email;
+
+    const cpf = document.getElementById("cpf-doador");
+    cpf.value = usuario.cpf;
+
+    const telefone = document.getElementById("telefone-doador");
+    telefone.value = usuario.telefone;
     console.log(usuario)
 
+    //DADOS ENDEREÇO
+    const rua = document.getElementById("rua-doador");
+    rua.value = usuario.enderecos[0].rua;
+    
+    const numero = document.getElementById("numero-doador");
+    numero.value = usuario.enderecos[0].numero;
+    
+    const complemento = document.getElementById("complemento-doador");
+    complemento.value = usuario.enderecos[0].complemento;
+    
+    const bairro = document.getElementById("bairro-doador");
+    bairro.value = usuario.enderecos[0].bairro;
 
+    const cidade = document.getElementById("cidade-doador");
+    cidade.value = usuario.enderecos[0].cidade;
 
-  // DADOS PESSOAIS
-  document.getElementById("nome-doador").value = usuario.nome;
-  document.getElementById("rg-doador").value = usuario.rg;
-  const date = new Date (usuario.dataNascimento); 
-  document.getElementById("dt-nasc-doador").value = (new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format(date));
-  document.getElementById("email-doador").value = usuario.email;
-  document.getElementById("cpf-doador").value = usuario.cpf;
-  document.getElementById("telefone-doador").value = usuario.telefone;
-  
-  //DADOS ENDEREÇO
-  document.getElementById("rua-doador").value = usuario.enderecos[0].rua;
-  document.getElementById("numero-doador").value = usuario.enderecos[0].numero;
-  document.getElementById("complemento-doador").value = usuario.enderecos[0].complemento;
-  document.getElementById("bairro-doador").value = usuario.enderecos[0].bairro;
-  document.getElementById("cidade-doador").value = usuario.enderecos[0].cidade;
-  document.getElementById("uf-doador").value = usuario.enderecos[0].estado;
-  document.getElementById("cep-doador").value = usuario.enderecos[0].cep;  
+    const uf = document.getElementById("uf-doador");
+    uf.value = usuario.enderecos[0].estado;
 
-  //PEGANDO O TIPO SEXO E DEIXANDO O INPUT RADIO CHECKADO
-  let radios = document.getElementsByName("gender")
+    const cep = document.getElementById("cep-doador");
+    cep.value = usuario.enderecos[0].cep;  
 
-  for(let i = 0; i < radios.length; i++) {
-    if(radios[i].value === usuario.sexo) {
-      radios[i].checked = true
+    //PEGANDO O TIPO SEXO E DEIXANDO O INPUT RADIO CHECKADO
+    const radios = document.getElementsByName("gender")
+
+    for(let i = 0; i < radios.length; i++) {
+      if(radios[i].value === usuario.sexo) {
+        radios[i].checked = true;
+      }
     }
+    
+    //SETANDO A IMAGEM DE TIPO SANGUINEO ACORDO COM O TIPO DO DOADOR
+    const imgTipoSangue = document.getElementById("tipoSangue");
+   
+    const tipoSangue = usuario.tipoSanguineo;
+
+    switch(tipoSangue) {
+      case 'APOSITIVO': 
+        imgTipoSangue.setAttribute("src", '../img/Apositive.png')
+        break;
+
+      case 'ANEGATIVO':
+        imgTipoSangue.setAttribute("src", '../img/Anegative.png')
+        break;
+
+      case 'BPOSITIVO':
+        imgTipoSangue.setAttribute("src", '../img/Bpositive.png')
+        break;
+
+      case 'BNEGATIVO':
+        imgTipoSangue.setAttribute("src", '../img/Bnegative.png')
+        break;
+
+      case 'ABPOSITIVO':
+        imgTipoSangue.setAttribute("src", '../img/ABpositive.png')
+        break;
+
+      case 'ABNEGATIVO':
+        imgTipoSangue.setAttribute("src", '../img/ABnegative.png')
+        break;
+
+      case 'OPOSITIVO':
+        imgTipoSangue.setAttribute("src", '../img/Opositive.png')
+        break;
+        
+      case 'ONEGATIVO':
+        imgTipoSangue.setAttribute("src", '../img/Onegative.png')
+        break;
+
+      default:
+        imgTipoSangue.setAttribute("src", '../img/nao-sei.png')
+    }
+  
+
+    // SETA A LOGO
+    const imgLogo = document.getElementById("img-logo")
+    imgLogo.setAttribute("src", usuario.caminhoImg )
+
+    // ATUALIZA OS DADOS DO DOADOR
+    document.getElementById("form-dados-doador").onsubmit = (event) => {
+
+      event.preventDefault();
+
+      console.log(nome.value);
+      console.log(radios[0].checked ? radios[0].value : radios[1].value)
+      // OBJETO QUE EU ENVIO NO PUT DA REQUISIÇÃO
+      
+      const endereco = {
+            rua : rua.value,
+            numero : numero.value, 
+            complemento : complemento.value, 
+            bairro : bairro.value,
+            cidade : cidade.value,
+            estado : uf.value,
+            cep : cep.value,
+            latitude : null,
+            longitude : null,
+            doador : {
+              id : usuario.id,
+              nome : nome.value,
+              rg : rg.value,
+              dataNascimento : '2020-01-01',
+              email : email.value,
+              cpf : cpf.value,
+              telefone : telefone.value,
+              sexo : radios[0].checked ? radios[0].value : radios[1].value,
+              caminhoImg : caminhoImg,
+              senha : usuario.senha,
+              tipoSanguineo : usuario.tipoSanguineo,
+              
+          }        
+      }
+    
+
+    // FAÇO A REQUISIÇÃO
+    const api = axios.create({
+        baseURL: "http://localhost:8080",
+    })
+
+    api.put(`/enderecos/${usuario.enderecos[0].id}`, endereco)
+    .then(res => {
+        alert("Dados atualizados com sucesso!")
+    })
+    .catch(err => {
+        alert("Erro ao alterar");
+    })
+
+  }
+}
+  catch(err) {
+    console.log(err)
   }
 
-  //SETANDO A IMAGEM DE TIPO SANGUINEO ACORDO COM O TIPO DO DOADOR
-  const imgTipoSangue = document.getElementById("tipoSangue")
+}
 
-  const tipoSangue = usuario.tipoSanguineo
-  console.log(tipoSangue)
 
-  switch(tipoSangue) {
-    case 'APOSITIVO': 
-      imgTipoSangue.setAttribute("src", '../img/Apositive.png')
-      break;
-    case 'ANEGATIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/Anegative.png')
-      break;
-    case 'BPOSITIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/Bpositive.png')
-      break;
-    case 'BNEGATIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/Bnegative.png')
-      break;
-    case 'ABPOSITIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/ABpositive.png')
-      break;
-    case 'ABNEGATIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/ABnegative.png')
-      break;
-    case 'OPOSITIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/Opositive.png')
-      break;
-    case 'ONEGATIVO':
-      
-      imgTipoSangue.setAttribute("src", '../img/Onegative.png')
-      break;
-    default:
-      
-      imgTipoSangue.setAttribute("src", '../img/nao-sei.png')
-  }
  
-  const imgLogo = document.getElementById("img-logo")
-
-  const logo = usuario.caminhoImg
-  console.log(logo)
-  
-  function setarImgUsuario(){
-    imgLogo.setAttribute("src", logo)
-  }
-
-setarImgUsuario()
-
-}
-catch(err) {
-  console.log(err)
-}
-
-}
 
 
-document.getElementById("form-dados-doador").onsubmit = function( event ){
-
-  event.preventDefault();
-
-  // PEGA OS VALORES QUE O USUARIO DIGITOU NA TELA MEUS DADOS PARA ATUALIZAR SEUS DADOS
-  const nomeDoador = document.getElementById("nome-doador").value;
-  const rgDoador = document.getElementById("rg-doador").value;
-  const dtNasc = document.getElementById("dt-nasc-doador").value;
-  const email = document.getElementById("email-doador").value;
-  const cpf = document.getElementById("cpf-doador").value;
-  const telefone = document.getElementById("telefone-doador").value;
-  //const senha = document.getElementById("senha-doador").value;
-  const ruaDoador = document.getElementById("rua-doador").value;
-  const numero = document.getElementById("numero-doador").value;
-  const complemento = document.getElementById("complemento-doador").value;
-  const bairro = document.getElementById("bairro-doador").value;
-  const cidade = document.getElementById("cidade-doador").value;
-  const estado = document.getElementById("uf-doador").value;
-  const cep = document.getElementById("cep-doador").value;  
-
-
-  const sexo = document.getElementsByName("gender");
-  let opcaoSexo = '';
-
-  for(let i = 0; i < sexo.length; i++){
-      if(sexo[i].checked) {
-          opcaoSexo = sexo[i].value;
-      }
-  }
-
-  
-
-  //------------------
-  // OBJETO QUE EU ENVIO NO PUT DA REQUISIÇÃO
-
-  const endereco =  {
-      rua : ruaDoador,
-      numero : numero, 
-      complemento : complemento, 
-      bairro : bairro,
-      cidade : cidade,
-      estado : estado,
-      cep : cep,
-      latitude : null,
-      longitude : null,
-      doador : {
-          nome : nomeDoador,
-          rg : rgDoador,
-          dataNascimento : dtNasc,
-          email : email,
-          cpf : cpf,
-          telefone : telefone,
-          sexo : opcaoSexo,
-          //tipoSanguineo : opcaoTipoSangue,
-          //senha : senha,
-          caminhoImg : caminhoImg,
-      }
-  }
-
-  // FAÇO A REQUISIÇÃO
-  const api = axios.create({
-      baseURL: "http://localhost:8080",
-  })
-
-  api.put("/enderecos", endereco)
-  .then(res => {
-      alert("Cadastro alterado com sucesso!")
-  })
-  .catch(err => {
-      alert("Erro ao alterar");
-  })
-
-}
 
