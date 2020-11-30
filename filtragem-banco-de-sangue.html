@@ -78,15 +78,15 @@
 
           <div>
             <form id="form-locais-mapa" action="">
-              <select name="uf" id="uf">
-                <option value="SP">SP</option>
-                <option value="RJ">RJ</option>
-                <option value="MG">MG</option>
-              </select>
               <select name="cidade" id="cidade">
-                <option value="São Paulo">São Paulo</option>
-                <option value="Rio de Janeiro">Rio de Janeiro</option>
-                <option value="Minas Gerais">Minas Gerais</option>
+                <option value="São Paulo">São Paulo</option>                
+              </select>
+              <select name="regiao" id="regiao">
+                <option value="Região Norte">Região Norte</option>
+                <option value="Região Sul">Região Sul</option>
+                <option value="Região Leste">Região Leste</option>
+                <option value="Região Oeste">Região Oeste</option>
+                <option value="Região Centro">Região Centro</option>
               </select>
               <input type="submit" value="Buscar">
             </form>
@@ -106,10 +106,10 @@
           <table>
             <thead>
               <tr>
-                <th>Nome do banco de sangue</th>
-                <th>Rua</th>
-                <th>Bairro</th>
+                <th>Nome do Banco de Sangue</th>
+                <th>Rua</th>                
                 <th>Numero</th>
+                <th>Bairro</th>
                 <th>Agendar</th>
               </tr>          
             </thead>
@@ -194,8 +194,9 @@
       style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text>
   </svg>
   
-  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""></script>
+  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
+  
   <script src="js/filtragem-banco-de-sangue.js"></script>
 </body>
 

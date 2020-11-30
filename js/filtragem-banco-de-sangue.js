@@ -1,6 +1,6 @@
 var LeafIcon = L.Icon.extend({
     options: {
-        shadowUrl: 'leaf-shadow.png',
+        // shadowUrl: 'img/location-pin.png',
         iconSize:     [25, 41],
         iconAnchor:   [22, 94],
         shadowAnchor: [4, 62],
@@ -8,7 +8,7 @@ var LeafIcon = L.Icon.extend({
     }
 });
 
-var iconeVermleho = new LeafIcon({iconUrl: 'img/location-pin.png'});
+var iconeVermelho = new LeafIcon({iconUrl: 'img/location-pin.png'});
 const access_token = 'pk.eyJ1IjoiZGVpdmFvIiwiYSI6ImNrZ2IzZ2ZtcjBkNTEyeW9qdTM4OWJ2MmcifQ.lY5VLKm2s_io2UnOMeEFTg';
 
 L.icon = (options) => {
@@ -28,7 +28,7 @@ const baseMap = L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/light-v10/t
 
 baseMap.addTo(leafletMapa);
 
-document.getElementById("form-locais-mapa").addEventListener("submit", (e)=> {
+document.getElementById("form-locais-mapa").addEventListener("submit", async (e)=> {
     e.preventDefault();
 
  //   const cidade = document.getElementById("cidade").value;
@@ -40,28 +40,36 @@ document.getElementById("form-locais-mapa").addEventListener("submit", (e)=> {
     axios.get("http://localhost:8080/banco")
     .then(res => {
         const banco = res.data;
+        console.log(banco)
 
-        content.innerHTML = banco.map(b =>     
+        const filtro = banco.filter(f => f.endereco.cidade === document.getElementById("cidade").value && f.endereco.regiao === document.getElementById("regiao").value);
+        console.log(filtro)
+        
+        content.innerHTML = filtro.map(f =>     
             `<tr>
-                <td>${b.nome}</td>
-                <td>${b.endereco.rua}</td>
-                <td>${b.endereco.bairro}</td>
-                <td>${b.endereco.numero}</td>
+                <td>${f.nome}</td>
+                <td>${f.endereco.rua}</td>                
+                <td>${f.endereco.numero}</td>
+                <td>${f.endereco.bairro}</td>
                 <td><a href="">agendar</a></td>
             </tr>`      
-        ).join('')
-
-        console.log(banco.map(b => b.endereco))
-        .forEach(e => {
+        ).join('')  
+        
+        console.log(filtro.map(f => f.endereco))
+        filtro.forEach(f => {
             const pop = L.popup()
-            .setLatLng([e.latitude, e.longitude])
-            .setContent(`<p>${e.nome}</p>`)
+            .setLatLng([f.endereco.latitude, f.endereco.longitude])
+            .setContent(`<p>${f.nome}</p>`)
 
-            L.marker([e.latitude, e.longitude], {icon: iconeVermleho, title : e.endereco}).bindPopup(pop).addTo(leafletMapa);       
+            L.marker([f.endereco.latitude, f.endereco.longitude], {icon: iconeVermelho, title : f.endereco.rua}).bindPopup(pop).addTo(leafletMapa);
+            console.log("pins")       
         })
+
+        
+        
     })
     .catch(err => {
-
+        console.log(err);        
     })
     
 
