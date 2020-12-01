@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>doeamor</title>
+    <title>DooAmor</title>
 
     <link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
@@ -65,12 +65,52 @@
       </div>
 
       <div class="formLogin display">
-        <div class="loginTitulo">já agendou a sua próxima doação?</div>
+        <div class="loginTitulo">já agendou a sua próxima doação??</div> 
+       <!--
         <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
         <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
         <div class="senha">esqueceu a senha?</div>
-        
-        <button class="btn_enviar" type="submit" name="enviar">login</button>
+-->
+        <form id="formDonator" method="POST" enctype="multipart/form-data">
+          <div class="form-group text-center">
+              <label class="label" for="email_doador">Email:</label>
+              <div class="input-group mb-3">
+                  <input class="form-control" id="email_doador" type="email"
+                      placeholder="email@email.com" name="email_doador" value="" required />
+              <!--
+                      <div class="input-group-append">
+                      <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                      </div>
+              -->
+                </div>
+
+              <label class="label" for="senha_doador">Senha:</label>
+              <div class="input-group mb-3">
+                  <input class="form-control" id="senha_doador" type="password" name="senha_doador" value=""
+                      required />
+<!--
+                  <div class="input-group-append">
+                      <span class="input-group-text"><i class="fas fa-user-lock"></i></span>
+                  </div>
+ -->             
+                </div>
+
+          </div>
+          <div class="d-flex flex-row justify-content-around">
+              <div>
+                  <h6 class="subtitle"><a href="#" data-toggle="modal" data-target="#EsqueciDoador">Esqueceu a
+                          senha?</a></h6>
+
+                  <h6 class="subtitle"><a href="./pfcad.html">Ainda não tem conta?</a></h6>
+              </div>
+             
+              <button class="btn_enviar" type="submit" id="btn-enviar" name="enviar">
+                enviar</button>
+          </div>
+ 
+      </form>
+
+        <!-- <button class="btn_enviar" type="submit" name="enviar">login</button> -->
        
         <div class="socialTitulo"><span>ou faça login pelo:</span></div>
         <div class="socialLoginBtn">
@@ -94,6 +134,9 @@
           <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
         </div>
       </div>
+
+
+
     </div>
   </div>
 
@@ -101,7 +144,7 @@
 </main>
  
   <script src="js/home.js"></script>
-  <script src="../js/integracao-login.js"></script>
+  <script src="./js/integracao-login.js"></script>
   <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
   
   </body>

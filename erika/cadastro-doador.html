@@ -1,104 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alessandro</title>
-      <link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+    <title>doeamor</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel='stylesheet prefetch' href='https://foliotek.github.io/Croppie/croppie.css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/dashboard.css">
-  </head>
+    
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
 <body>
-      <header id="navbar" >
-              <div id="navbarMenu">
-                <a href="../erika/home.html">home</a>
-                   <div id="navbarBtns">
-               </div>
-              </div>
-            </header>
-         
-      
-            <main>
-              <hr>
-            <section id="mysidenav">
-              <img id="silhueta" class="silhuette" src="img/silhueta.png"> <img id="gotaDoador" class="bloodtype" src="img/gotaMais.png">
-              <ul>
-                  <li>
-                      <a class="sidelink" href="#cadastroDoador">Alterar<br />Dados Cadastrais</a>
-                  </li>
-               
-              </ul>
-            </section>
-            <div id="central">
-          <section id="boasvindas">
-          <h3>Olá <span id="nomeUsuario">{SR DOADOR}</span> sua última doação foi em 00/00/0000</h3>
-          <p>Você poderá doar novamente a partir de 00/00/0000</p>
-          <p>Ou  <button class="cadastroBtn" type="button">Agendar Doação</button> agora mesmo.</p>
-      </section>
-      
-      <section id="historico">
-        
-        
-          <hr class="sections">
-          <span>Seu histórico de doações está aqui - <button id="btnMostrar" onclick="myFunction2()">clique aqui para saber mais</button></span>
-          
-         <br />      
-      <div id="histbox"  class="historicodoador"> 
-          <h4>Histórico de doações</h4> 
-                
-                  <table class="tabela">
-                      <thead>
-                          <tr>
-                              <th>Banco de sangue</th>
-                              <th>Dia</th>
-                              <th>Horário</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>XXX XXXXX XXXXX</td>
-                              <td>XXX XXXXX XXXXX</td>
-                              <td>XXX XXXXX XXXXX</td>
-                          </tr>
-                          <tr>
-                              <td>XXX XXXXX XXXXX</td>
-                              <td>XXX XXXXX XXXXX</td>
-                              <td>XXX XXXXX XXXXX</td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              </section>
-             
+  <!-- barra de navegação -->
+  <header id="navbar" >
+    <div id="navbarMenu">
+      <a href="home.html">home</a>
+      <a href="">quem somos</a>
+      <a href="onde-doar.html">onde doar</a>
+      <div id="navbarBtns">
+        <button id="cadastroBtn" >cadastra-se</button>
+        <button id="loginBtn">login</button>
       </div>
+    </div>
+  </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div id="container">
-                <main>
+  <main>
     <form id="cadastroDoador" method="POST" action="" enctype="multipart/form-data">
 
       <p>dados pessoais</p>
@@ -271,7 +199,7 @@
       </div>
 
       <section class="cadastroBtn">
-        <button type="submit" name="enviar">Atualizar Dados</button>
+        <button type="submit" name="enviar">cadastrar</button>
       </section>
     </form>
 
@@ -362,13 +290,10 @@
 
   </main>
 
-            </div>
-        </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+  <script src="js/home.js"></script>
+  <script src="js/cadastro.js"></script>
 
-    </main>
-
-    <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
-    <script src="js/integracao-dashboard-doador-meus-dados.js"></script>
-    <script src="js/dashboard-doador-principal.js"></script>    
 </body>
 </html>

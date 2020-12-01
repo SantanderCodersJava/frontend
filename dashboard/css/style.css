@@ -1,0 +1,34 @@
+.img{
+    height: 150px;
+    width:150px;
+    border-radius: 50%;
+    border: 1.5px solid black;
+}
+
+label.cabinet{
+	display: block;
+	cursor: pointer;
+}
+
+label.cabinet input.file{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-30px;
+}
+
+#upload-demo{
+	width: 250px;
+	height: 250px;
+  padding-bottom:25px;
+}
+figure figcaption {
+  bottom: 0;
+  color: black;
+  width: 100%;
+  padding-left: 9px;
+  padding-bottom: 5px; 
+}

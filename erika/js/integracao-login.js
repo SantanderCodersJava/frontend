@@ -24,7 +24,8 @@ document.getElementById("formDonator").onsubmit = function(event) {
             //console.log(res.data)
             const respDoador = res.data
             localStorage.setItem("__login-info", JSON.stringify(respDoador))
-            window.location.href="./dashboard/dashboard-doador-principal.html"
+            // window.location.href="./dashboard/dashboard-doador-principal.html"
+            window.location.href="./dashboard.html"
             alert("Login efetuado com sucesso!")
         })
         .catch(err => {

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doeamor</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+  <!-- barra de navegação -->
+  <header id="navbar" >
+    <div id="navbarMenu">
+      <a href="home.html">home</a>
+      <a href="">quem somos</a>
+      <a href="onde-doar.html">onde doar</a>
+      <div id="navbarBtns">
+        <button id="cadastroBtn" >cadastra-se</button>
+        <button id="loginBtn">login</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <form id="cadastroDoador" method="POST" action="" enctype="multipart/form-data">
+
+      <p>dados do banco de sangue</p>
+      <div>
+          <label>nome da instituição</label>
+          <input id="nome" type="text" name="nome" placeholder="Banco de Sangue de São Paulo" required>
+      </div>
+
+      <div class="dados">
+        <section>
+          <label>CNPJ</label>
+          <input id="cnpj" type="text" name="cnpj" placeholder="11.111.111/1111-11">
+        </section>
+         
+        <section> 
+          <label>telefone</label>
+          <input id="telefone-doador" type="tel" name="telefone" placeholder="(00) 0000-0000" required>
+        </section>
+      </div>
+
+      <div class="dados"> 
+        <section>
+          <label>email institucional</label>
+          <input id="emailinstitucional" type="email" name="emailinstitucional" placeholder="cadastro@bancodesangue.gov.br" required>
+        </section>
+
+        <section>
+          <label>senha</label>
+          <input class="textboxG" id="senha" type="password" name="senha" required>
+        </section>
+      </div>
+
+      <div class="dados">
+        <section id="cep">
+          <label>CEP</label>
+            <div id="cepBusca">
+              <input  name="cep" type="text" id="cep-doador" value="" required size="5"  />
+              <button>buscar</button>
+            </div>
+        </section>
+
+        <section id="endereco">
+          <label>endereço</label>
+          <input  name="rua" type="text" id="rua-doador" required size="25" />
+        </section>
+      </div>
+          
+      <div class="dados">
+        <section id="numero">
+          <label >número</label>
+          <input type="text" id="numero-doador" name="numero" required>
+        </section>
+
+        <section id="complemento">
+          <label>complemento</label>
+          <input type="text" id="complemento-doador" name="complemento">
+        </section>
+
+        <section>
+          <label>bairro</label>
+          <input  name="bairro" type="text" id="bairro-doador" required />
+        </section>
+      </div>
+    
+      <div class="dados">
+        <section>
+          <label>cidade</label>
+          <input name="cidade" type="text" id="cidade-doador" required/>
+        </section>
+
+        <section>
+          <label>estado</label>
+          <select id="uf-doador" name="estado" required>
+            <option value=""></option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </section>
+      </div>
+
+      <p>dados para contato</p>
+      <div>
+        <label>nome</label>
+        <input id="contato" type="text" name="contato"  required>
+      </div>
+      
+      <div class="dados">
+        <section>
+          <label>email</label>
+          <input class="textboxG" id="emailContato" type="email" name="emailcontato" placeholder="maria@bancodesangue.gov.br">
+        </section>
+
+        <section id="telefoneContato">
+          <label>telefone</label>
+          <input id="telefonecontato" type="text" name="telefonecontato" placeholder="(00) 0000-0000" required>
+        </section>
+
+        <section id="cargoContato">
+          <label>cargo</label>
+          <input class="textboxG" id="cargo" type="text" name="cargo">
+        </section>
+      </div>
+
+      <section class="cadastroBtn">
+        <button type="submit" name="enviar">cadastrar</button>
+      </section>
+
+    </form>
+
+    <!-- modais -->
+    <!-- modal para realizar o cadastro de doador ou de banco de sangue -->
+    <div id="modalCadastro">
+      <div class="modal-content">
+        <span class="fecharModal">&times;</span>
+
+        <div id="cadastroTipos"> 
+          <div id="tipoDoador">
+            <span class="sou">sou</span>
+            <span>doador</span>
+          </div>
+
+          <div id="tipoBanco">
+            <span class="sou">sou</span>
+            <span>banco de sangue</span>
+          </div>
+
+          <div id="tipoBanco">
+            <span class="sou">sou</span>
+            <span>empresa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal para login de doador ou de banco de sangue -->
+    <div id="modalLogin">
+      <div class="modal-content">
+        <span class="fecharModal">&times;</span>
+
+        <div id="loginOpcao">
+          <button class="btn active">doador</button>
+          <button class="btn">banco de sangue</button>
+        </div>
+
+        <div class="formLogin display">
+          <div class="loginTitulo">já agendou a sua próxima doação?</div>
+          <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
+          <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
+          <div class="senha">esqueceu a senha?</div>
+          
+          <button class="btn_enviar" type="submit" name="enviar">login</button>
+
+          <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+          <div class="socialLoginBtn">
+            <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+            <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        
+        <div class="formLogin">
+          <div class="loginTitulo">já verificou o seu estoque hoje?</div>
+
+          <input id="email_doador" type="email" placeholder="email" name="email_banco" value="" required />
+          <input  id="senha_doador" type="password" placeholder="senha" name="senha_doador" value="" required />
+          <div class="senha">esqueceu a senha?</div>
+
+          <button class="loginBtn" type="submit" name="enviar">login</button>
+
+          <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+          <div class="socialLoginBtn">
+            <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+            <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <script src="js/home.js"></script>
+  <script src="js/cadastro.js"></script>
+
+</body>
+</html>
